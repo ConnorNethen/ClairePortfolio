@@ -1,0 +1,7 @@
+Flask==3.0.1
+gunicorn
+Werkzeug==3.0.0
+python-dotenv>=0.19.2
+authlib>=1.0
+requests>=2.27.1
+flask-talisman>=0.8.1
