@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="{{ url_for('static', filename='/styles/carousel.css') }}">
+    <style>
+      :root {
+          --background-image-url: url('{{ url_for('static', filename='assets/images/totoro_banner.jpg') }}');
+      }
+    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/styles/profile.css')}}">
     
     
     
@@ -36,6 +42,20 @@
       </div>
 
 
+    <!-- Self Portrait -->
+    <div class="profile">
+      <div class="container-profile">
+          <div class="profile-content">
+              <img src="{{ url_for('static', filename='assets/images/ClairePortrait.png')}}" alt="Portrait of Claire" class="profile-image">
+              <div class="about-me">
+                  <h1 class="h1-profile">About Me</h1>
+                  <!-- Blurb about Claire -->
+                  <p>Hiya, my name is Claire Hanel (b. 2001). I'm a 2D illustrator and animator currently residing in Milwaukee Wisconsin. I graduated from UW-Milwaukee in 2023 with a BA in Animation.</p>
+                  
+              </div>
+          </div>
+      </div>
+    </div>
 
 
 </body>
