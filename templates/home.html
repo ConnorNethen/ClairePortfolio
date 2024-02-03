@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" href="{{ url_for('static', filename='/styles/navigationbar.css') }}">
+
     <link rel="stylesheet" href="{{ url_for('static', filename='/styles/carousel.css') }}">
     <style>
       :root {
@@ -16,13 +18,27 @@
     
 </head>
 <body style="margin: 0em">
+    <script src="{{ url_for('static', filename='/javascript/navigationbar.js') }}"></script>
     <script src="{{ url_for('static', filename='/javascript/carousel.js') }}"></script>
 
-
-
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+      <a class="navbar-brand" href="#Top-Page">Claire Hanel</a>
+      <div class="nav-group">
+          <ul class="nav-items" id="nav-items">
+              <li class="nav-item"><a class="nav-link" href="#About-Me">About Me</a></li>
+              <li class="nav-item"><a class="nav-link" href="#Animations">Animations</a></li>
+              <li class="nav-item"><a class="nav-link" href="#Artwork">Artwork</a></li>
+              <li class="nav-item"><a class="nav-link" href="#Contact">Contact</a></li>
+          </ul>
+          <div class="navbar-toggler" id="navbar-toggler">
+              <img src="{{ url_for('static', filename='assets/Icons/paint_brush.png')}}" class="toggler-img" alt="Toggler Icon" id="toggler-img">
+          </div>
+      </div>
+  </nav>
 
     <!-- Carousel -->
-    <div class="c-container">
+    <div id="Top-Page" class="c-container">
         <div class="c" id="carousel">
           <div class="c-item">
             <img src="{{ url_for('static', filename='assets/images/p1.jpg')}}" alt="Picture 1">
@@ -43,7 +59,7 @@
 
 
     <!-- Self Portrait -->
-    <div class="profile">
+    <div id="About-Me" class="profile">
       <div class="container-profile">
           <div class="profile-content">
               <img src="{{ url_for('static', filename='assets/images/ClairePortrait.png')}}" alt="Portrait of Claire" class="profile-image">
@@ -56,6 +72,8 @@
           </div>
       </div>
     </div>
+
+
 
 
 </body>
