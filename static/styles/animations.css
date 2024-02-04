@@ -1,0 +1,110 @@
+.animations {
+    font-family: Arial, sans-serif;
+    background-color: #36454F;
+    margin: 0px;
+    padding-top: 0px;
+    height: 100vh;
+    max-width: 100%;
+}
+
+.h1-animations {
+    padding: 0px;
+    margin: 0px;
+    font-size: 75px;
+    text-align: center;
+}
+
+.animation-summary {
+    text-align: center;
+}
+
+
+/* Style for arranging images in 2 rows */
+.animations-image-row {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: nowrap;
+}
+
+.img-container {
+    justify-items: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    text-align: center; /* Center text */
+    padding: 2.5%;
+    margin: 0 auto; /* Center the container itself if needed */
+    width: 50%; /* Adjust the width as necessary */
+}
+
+.animation-images {
+    flex: 3;
+    padding: 0%; /* Add padding for spacing */
+    flex-wrap: wrap; /* Wrap images to the next line if they don't fit horizontally */
+    justify-content: space-around; /* Distribute images evenly on the line */
+}
+
+.animation-image {
+    width: 100%; /* Adjust width to be fully responsive within the container */
+    max-height: 165px; /* Or any other value */
+    margin-bottom: 10px; /* Space between image and caption */
+    transition: transform 0.75s;
+}
+
+.animation-image:hover {
+    transform: scale(1.4); /* Enlarge the image on hover */
+}
+
+.animations-section {
+    font-family: Arial, sans-serif;
+    color: #FFFFFF;
+    flex: 2;
+    font-size: 18px;
+    line-height: 1.6;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    justify-content: center;
+}
+
+.animations-captions, .animations-text-box {
+    grid-column: 1 / -1; /* Span the full width of the grid */
+    margin: 5px 0; /* Add some space above and below */
+}
+
+.animations-captions {
+    font-family: Arial, sans-serif;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    font-size: 18px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+/* Style the text boxes */
+.animations-text-box {
+    font-size: 15px;
+    width: 250px;
+    color: #FFFFFF;
+    padding: 5px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+/* Larger screens */
+@media (min-width: 1024px) {
+    .img-container {
+        width: 30%; /* Adjust width for even larger screens */
+    }
+}
+
+/* Tablet and smaller devices (<=768px) */
+@media (max-width: 768px) {
+    .img-container {
+        width: 45%; /* Adjust width for larger screens */
+    }
+}
+
+/* Smartphone and smaller devices (<=480px) */
+@media (max-width: 480px) {
+
+}
