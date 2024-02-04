@@ -6,8 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const togglerImg = document.getElementById('toggler-img');
 
     function handleScroll() {
-        const currentScrollY = window.scrollY;
-        
         // User is actively scrolling
         navbar.style.backgroundColor = 'transparent';
         closeNavbar(); // Close the navbar menu
@@ -15,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Throttle updates to reduce repaints and improve performance
         clearTimeout(scrollTimeout);
         scrollTimeout = setTimeout(() => {
-            // After 200ms of no scroll events, consider the scrolling stopped
+            // After 300ms of no scroll events, consider the scrolling stopped
             if (window.scrollY > 0) {
                 // If not at the top, restore the navbar's original background color
                 navbar.style.backgroundColor = '#848B79'; // Reset to stylesheet default or set a specific color
@@ -40,7 +38,11 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             togglerImg.src = '/static/assets/Icons/paint_brush.png';
             togglerImg.classList.remove('transformed-toggler-img');
-            navbar.style.backgroundColor = 'transparent';
+            if (window.scrollY > 0) {
+                navbar.style.backgroundColor = '#848B79';
+            } else {
+                navbar.style.backgroundColor = 'transparent';
+            }
         }
     }
 

@@ -22,6 +22,8 @@
     cursor: pointer;
     height: 50px;
     width: 50px;
+    min-height: 50px;
+    min-width: 50px;
     font-size: 24px; /* Adjust the font size as needed */
 
     display: flex; /* Make it a flex container */
@@ -42,7 +44,6 @@
 .toggler-img {
     height: 30px;
     width: 30px;
-
     transition: transform 0.3s ease;
 }
 
@@ -57,7 +58,7 @@
     padding: 0;
     justify-content: center; /* Center items horizontally */
     align-items: center; /* Align the items vertically */
-    margin-right: 10px;
+    margin-right: 1.5%;
 
     transform: translateX(50%) scale(0); /* Initially, move the nav-items to the right */
     transition: transform 0.6s ease, opacity 0.6s ease,  visibility 0s linear 0.35s; /* Transition effect for sliding and fading in */
@@ -90,9 +91,86 @@
     font-family: 'Catamaran';
     text-decoration: none;
     transition: font-size 0.4s ease;
+    white-space: nowrap; 
 }
 
 .nav-link:hover {
     text-decoration: underline;
     font-size: 23px;
 }
+
+/* Tablet and smaller devices (<=768px) */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 25px; /* Smaller font size for navbar brand */
+    }
+  
+    .nav-link {
+        font-size: 17px; /* Smaller font size for navigation links */
+    }
+
+    .nav-link:hover {
+        font-size: 19px;
+    }
+
+    .nav-items {
+        margin-right: 11%;
+    }
+  
+    .nav-item {
+        margin: 0 2.5%; /* Reduce margin between nav items for more space */
+    }
+  
+    .navbar-toggler {
+        height: 40px;
+        width: 40px;
+        min-height: 40px;
+        min-width: 40px;
+    }
+
+    .toggler-img {
+        height: 25px;
+        width: 25px;
+    }
+  }
+  
+  /* Smartphone and smaller devices (<=480px) */
+  @media (max-width: 508px) {
+    .navbar-brand {
+        font-size: 20px; /* Even smaller font size for navbar brand */
+    }
+  
+    .nav-link {
+        font-size: 14px; /* Further reduce font size for navigation links */
+    }
+
+    .nav-link:hover {
+        font-size: 16px;
+    }
+
+    .nav-items {
+        margin-right: 7.5%;
+    }
+
+    .nav-item {
+        margin: 0 1%; /* Further reduce margin between nav items */
+    }
+  
+    /* Adjust navbar padding or layout as needed for very small screens */
+    .navbar {
+        padding: 0.5rem 1%; /* Adjust the padding to ensure everything fits */
+    }
+  
+    /* Consider adjusting the navbar-toggler size if necessary */
+    .navbar-toggler {
+        height: 30px;
+        width: 30px;
+        min-height: 30px; /* Slightly smaller */
+        min-width: 30px; /* Slightly smaller */
+    }
+
+    .toggler-img {
+        height: 20px;
+        width: 20px;
+    }
+  }
