@@ -137,19 +137,19 @@
   /* Smartphone and smaller devices (<=480px) */
   @media (max-width: 508px) {
     .navbar-brand {
-        font-size: 20px; /* Even smaller font size for navbar brand */
+        font-size: 19px; /* Even smaller font size for navbar brand */
     }
   
     .nav-link {
-        font-size: 14px; /* Further reduce font size for navigation links */
+        font-size: 13px; /* Further reduce font size for navigation links */
     }
 
     .nav-link:hover {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     .nav-items {
-        margin-right: 7.5%;
+        margin-right: 6%;
     }
 
     .nav-item {
