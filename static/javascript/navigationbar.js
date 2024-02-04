@@ -1,78 +1,68 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
     let isOpen = false;
-
-    let isVisable = false;
-    let isScrolled = false;
     let scrollTimeout;
-
     const navbar = document.getElementById('navbar');
     const navItems = document.getElementById('nav-items');
     const togglerImg = document.getElementById('toggler-img');
 
-    let lastScrollY = window.scrollY; // Track the last scroll position
-
     function handleScroll() {
         const currentScrollY = window.scrollY;
-        isVisable = window.scrollY > 0 || lastScrollY !== currentScrollY;
+        
         // User is actively scrolling
+        navbar.style.backgroundColor = 'transparent';
         closeNavbar(); // Close the navbar menu
+        
         // Throttle updates to reduce repaints and improve performance
         clearTimeout(scrollTimeout);
-
-
-        // while scrolling, close and hide navbar
-        isVisable = false;
-        isOpen = false;
-        navbar.style.backgroundColor = ''
-        // change status of isScrolled after 200ms, make navbar visible again if not at the top of the page
         scrollTimeout = setTimeout(() => {
-            navbar.style.backgroundColor = ''
-            isVisable = window.scrollY > 0;
-        }, 200);
-        
-        lastScrollY = currentScrollY; // Update last scroll position
-        
+            // After 200ms of no scroll events, consider the scrolling stopped
+            if (window.scrollY > 0) {
+                // If not at the top, restore the navbar's original background color
+                navbar.style.backgroundColor = '#848B79'; // Reset to stylesheet default or set a specific color
+            } else {
+                // User is at the top of the page, can keep navbar transparent or set to default
+                navbar.style.backgroundColor = 'transparent';
+            }
+        }, 300);
     }
 
+    // Attach event listener for scroll events
     window.addEventListener('scroll', handleScroll);
-
-
+    
+    // Toggle the navigation bar's visibility and appearance
     function toggleNavbar() {
         isOpen = !isOpen;
         navItems.classList.toggle('nav-items-visible');
-        togglerImg.src = isOpen ? '/static/assets/Icons/x_icon.png' : '/static/assets/Icons/paint_brush.png';
         if (isOpen) {
+            togglerImg.src = '/static/assets/Icons/x_icon.png';
             togglerImg.classList.add('transformed-toggler-img');
+            navbar.style.backgroundColor = '#848B79';
         } else {
+            togglerImg.src = '/static/assets/Icons/paint_brush.png';
             togglerImg.classList.remove('transformed-toggler-img');
+            navbar.style.backgroundColor = 'transparent';
         }
-        navbar.style.backgroundColor = isOpen || window.scrollY > 0 ? '#848B79' : 'transparent';
     }
 
+    // Close the navigation bar
     function closeNavbar() {
         isOpen = false;
         navItems.classList.remove('nav-items-visible');
         togglerImg.src = '/static/assets/Icons/paint_brush.png';
         togglerImg.classList.remove('transformed-toggler-img');
-        navbar.style.backgroundColor = window.scrollY > 0 ? '#848B79' : 'transparent';
     }
-
-    
 
     document.getElementById('navbar-toggler').addEventListener('click', toggleNavbar);
 
-    
-    // Close navbar when a nav link is clicked and scroll to link section
+    // Enhance navigation links with smooth scrolling and auto-closing of the navbar
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault(); // Prevent the default anchor link behavior
-            const targetId = this.getAttribute('href'); // Get the href attribute of the clicked link
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
-                const top = targetElement.offsetTop; // Get the distance of the element from the top of the document
                 window.scrollTo({
-                    top: top,
+                    top: targetElement.offsetTop,
                     behavior: 'smooth'
                 });
                 closeNavbar();
