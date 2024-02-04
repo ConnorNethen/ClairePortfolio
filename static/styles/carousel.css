@@ -66,3 +66,29 @@
   .prev img:hover, .next img:hover {
     transform: scale(1.4);
   }
+
+
+  /* Tablet and smaller devices (<=768px) */
+@media (max-width: 768px) {
+  .prev img, .next img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .c-caption {
+    font-size: 18px;
+  }
+}
+
+/* Smartphone and smaller devices (<=480px) */
+@media (max-width: 480px) {
+  .prev img, .next img {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.6s ease;
+  }
+
+  .c-caption {
+    font-size: 16px;
+  }
+}
