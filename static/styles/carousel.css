@@ -73,6 +73,11 @@
   .prev img, .next img {
     width: 30px;
     height: 30px;
+    transition: none;
+  }
+
+  .prev img:hover, .next img:hover {
+    transform: none;
   }
 
   .c-caption {
@@ -85,7 +90,11 @@
   .prev img, .next img {
     width: 20px;
     height: 20px;
-    transition: transform 0.6s ease;
+    transition: none;
+  }
+
+  .prev img:hover, .next img:hover {
+    transform: none;
   }
 
   .c-caption {
