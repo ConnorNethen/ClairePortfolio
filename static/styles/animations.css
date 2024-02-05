@@ -48,10 +48,11 @@
 
 .animation-image {
     width: 90%; /* Adjust width to be fully responsive within the container */
-    height: auto;
+    height: 90%; /* was auto */
     max-height: 200px; /* Or any other value */
     margin-bottom: 5%; /* Space between image and caption */
     transition: transform 0.75s;
+    justify-content: center;
 
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
 }
@@ -64,22 +65,18 @@
 .animations-captions, .animations-text-box {
     font-family: Arial, sans-serif;
     color: #FFFFFF;
-
-
     text-align: center;
-    width: 100%;
+    width: 90%;
 }
 
 .animations-captions {
-    margin: 5px 0;
+    margin: 1% 0;
     font-size: 30px;
     font-style: italic;
 }
 
-/* Style the text boxes */
 .animations-text-box {
     font-size: 15px;
-    margin-bottom: 10px;
 }
 
 /* Larger screen */
@@ -88,29 +85,83 @@
         max-height: none;
     }
 
-    .animations-image-row {
-        flex-wrap: nowrap;
+    .h1-animations {
+        font-size: 65px;
+    }
+
+    .animation-image {
+        transition: none;
+    }
+
+    .animation-image:hover {
+        transform: none;
+    }
+
+    .animations-captions {
+        font-size: 24px;
+    }
+    
+    .animations-text-box {
+        font-size: 13px;
     }
 }
 
 /* Tablet and smaller devices (<=768px) */
 @media (max-width: 768px) {
     .animations {
+        padding-top: 10%;
         max-height: none;
+    }
+
+    .h1-animations {
+        font-size: 50px;
     }
 
     .img-container {
         width: 50%; /* 100% of the container width for smaller screens */
+    }
+
+    .animation-image {
+        transition: none;
+    }
+
+    .animation-image:hover {
+        transform: none;
+    }
+
+    .animations-captions {
+        font-size: 23px;
+    }
+    
+    .animations-text-box {
+        font-size: 12px;
     }
 }
 
 /* Smartphone and smaller devices (<=480px) */
 @media (max-width: 480px) {
     .animations {
+        padding-top: 12.5%;
         max-height: none;
     }
     
     .h1-animations {
-        font-size: 50px; /* Smaller font size for very small screens */
+        font-size: 40px; /* Smaller font size for very small screens */
+    }
+
+    .animation-image {
+        transition: none;
+    }
+
+    .animation-image:hover {
+        transform: none;
+    }
+
+    .animations-captions {
+        font-size: 16px;
+    }
+    
+    .animations-text-box {
+        font-size: 11px;
     }
 }
