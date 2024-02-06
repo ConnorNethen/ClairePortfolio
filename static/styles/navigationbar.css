@@ -15,6 +15,8 @@
     font-size: 40px;
     font-family: 'Amarante';
     margin-left: 0.5%;
+    font-style: italic;
+    text-decoration-line: none;
 }
 
 .navbar-toggler {
@@ -99,18 +101,30 @@
     font-size: 23px;
 }
 
+/* Larger screen */
+@media (min-width: 1024px) {
+    .navbar-brand {
+        transition: font-size 0.7s ease;
+    }
+    
+    .navbar-brand:hover {
+        text-decoration-line: underline;
+        font-size: 43px;
+    }
+}
+
 /* Tablet and smaller devices (<=768px) */
 @media (max-width: 768px) {
     .navbar-brand {
         font-size: 25px; /* Smaller font size for navbar brand */
     }
-  
+
     .nav-link {
-        font-size: 17px; /* Smaller font size for navigation links */
+        font-size: 15px; /* Smaller font size for navigation links */
     }
 
     .nav-link:hover {
-        font-size: 19px;
+        font-size: 17px;
     }
 
     .nav-items {
@@ -135,7 +149,7 @@
   }
   
   /* Smartphone and smaller devices (<=480px) */
-  @media (max-width: 508px) {
+  @media (max-width: 480px) {
     .navbar-brand {
         font-size: 19px; /* Even smaller font size for navbar brand */
     }
