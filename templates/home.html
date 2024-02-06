@@ -17,6 +17,7 @@
 
     <link rel="stylesheet" href="{{ url_for('static', filename='/styles/animations.css')}}">
     
+    <link rel="stylesheet" href="{{ url_for('static', filename='/styles/artwork.css')}}">
     
     
 </head>
@@ -82,7 +83,7 @@
         <h1 class="h1-animations">My Animations</h1>
         <p class="animation-summary">My art style is whimsical and fun!</p>
         <div class="animation-images">
-            <div class="img-container">
+            <div class="animation-img-container">
                 <a href="https://www.youtube.com/watch?v=ZHKqhQ683sc" target="_blank" rel="noreferrer">
                     <img src="{{ url_for('static', filename='assets/images/Medairorsquin.png')}}" alt="Medairorsquin" class="animation-image">
                 </a>
@@ -93,7 +94,7 @@
                     An experimental, out-of-body journey through my dreamscape in different mediums
                 </div>
             </div>
-            <div class="img-container">
+            <div class="animation-img-container">
                 <a href="https://www.youtube.com/watch?v=IqDNRoHyH7w" target="_blank" rel="noreferrer">
                     <img src="{{ url_for('static', filename='assets/images/Excessive.png')}}" alt="Excessive" class="animation-image">
                 </a>
@@ -104,7 +105,7 @@
                     A crazy dream I had about excessive armpit hair growth
                 </div>
             </div>
-            <div class="img-container">
+            <div class="animation-img-container">
                 <a href="https://www.youtube.com/watch?v=p_vZVlSor2g" target="_blank" rel="noreferrer">
                     <img src="{{ url_for('static', filename='assets/images/Priscilla.png')}}" alt="Priscilla" class="animation-image">
                 </a>
@@ -115,7 +116,7 @@
                     The daily activities of my old roommate's pet hedgehog and her favorite toilet paper tube
                 </div>
             </div>
-            <div class="img-container">
+            <div class="animation-img-container">
                 <a href="https://www.youtube.com/watch?v=A456aanx6bc" target="_blank" rel="noreferrer">
                     <img src="{{ url_for('static', filename='assets/images/Wheres_my_ear.png')}}" alt="Where's my ear?" class="animation-image">
                 </a>
@@ -126,7 +127,7 @@
                     A monkey that bites off more than he can chew
                 </div>
             </div>
-            <div class="img-container">
+            <div class="animation-img-container">
                 <a href="https://www.youtube.com/watch?v=342euM7TXXI" target="_blank" rel="noreferrer">
                     <img src="{{ url_for('static', filename='assets/images/Metamorph.png')}}" alt="Metamorph" class="animation-image">
                 </a>
@@ -137,7 +138,7 @@
                     Clay morphing into different things
                 </div>
             </div>
-            <div class="img-container">
+            <div class="animation-img-container">
                 <a href="https://www.youtube.com/watch?v=dt-RwekHDxI" target="_blank" rel="noreferrer">
                     <img src="{{ url_for('static', filename='assets/images/My_Name.png')}}" alt="My Name" class="animation-image">
                 </a>
@@ -148,7 +149,7 @@
                     A little old lady spells out my name through knitting
                 </div>
             </div>
-            <div class="img-container">
+            <div class="animation-img-container">
                 <a href="https://www.youtube.com/watch?v=k6NlVHEJPtc" target="_blank" rel="noreferrer">
                     <img src="{{ url_for('static', filename='assets/images/Quinoa.png')}}" alt="Quinoa" class="animation-image">
                 </a>
@@ -159,7 +160,7 @@
                     A hungry monster
                 </div>
             </div>
-            <div class="img-container">
+            <div class="animation-img-container">
                 <a href="https://www.youtube.com/watch?v=r8E-ulJIlOU" target="_blank" rel="noreferrer">
                     <img src="{{ url_for('static', filename='assets/images/Rough_Morning.png')}}" alt="Rough Morning" class="animation-image">
                 </a>
@@ -171,6 +172,49 @@
                 </div>
             </div>
           </div>
+    </div>
+
+    <!-- Artwork Section -->
+    <div id="Artwork" class="artwork">
+        <div class="container-artwork">
+            <div class="artwork-description">
+                <h1 class="h1-artwork">My Artwork</h1>
+                <p class="paragraph-artwork">These are my artworks. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae neque ac justo malesuada
+                    luctus. Nullam eleifend, justo at viverra tristique, dui sapien volutpat nisi, et volutpat libero justo a nisl.</p>
+            </div>
+            <div class="artwork-images">
+                <div class="artwork-img-container">
+                    <a href="https://google.com" target="_blank">
+                        <img src="{{ url_for('static', filename='assets/images/p1.jpg')}}" alt="Artwork 1" class="artwork-image">
+                    </a>
+                </div>
+                <div class="artwork-img-container">
+                    <a href="https://google.com" target="_blank">
+                        <img src="{{ url_for('static', filename='assets/images/p1.jpg')}}" alt="Artwork 2" class="artwork-image">
+                    </a>
+                </div>
+                <div class="artwork-img-container">
+                    <a href="https://google.com" target="_blank">
+                        <img src="{{ url_for('static', filename='assets/images/p1.jpg')}}" alt="Artwork 3" class="artwork-image">
+                    </a>
+                </div>
+                <div class="artwork-img-container">
+                    <a href="https://google.com" target="_blank">
+                        <img src="{{ url_for('static', filename='assets/images/p1.jpg')}}" alt="Artwork 4" class="artwork-image">
+                    </a>
+                </div>
+                <div class="artwork-img-container">
+                    <a href="https://google.com" target="_blank">
+                        <img src="{{ url_for('static', filename='assets/images/p1.jpg')}}" alt="Artwork 5" class="artwork-image">
+                    </a>
+                </div>
+                <div class="artwork-img-container">
+                    <a href="https://google.com" target="_blank">
+                        <img src="{{ url_for('static', filename='assets/images/p1.jpg')}}" alt="Artwork 6" class="artwork-image">
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 
 

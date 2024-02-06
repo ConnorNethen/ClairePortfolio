@@ -1,0 +1,78 @@
+.artwork {
+    padding: 0em;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.container-artwork {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding-top: 1.5%;
+    padding-bottom: 5%;
+    background-color: #A7C7E7;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.artwork-images {
+    flex: 1; /* Adjust the flex value to control the size */
+    width: auto; /* Adjusted to manage the overall width of the image section */
+    max-width: 100%;
+    display: flex;
+    flex-direction: row; /* Keep images in a row that wraps */
+    flex-wrap: wrap;
+    justify-content: center; /* Center images within the container */
+    background-color: gray;
+}
+
+.artwork-img-container {
+    width: 28%;
+    margin: 1%; /* Adjusted margin for spacing around images */
+    padding: 0;
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+}
+
+.artwork-image {
+    width: 100%; /* Make images take up the full width of their container */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.5s;
+}
+
+
+.artwork-image:hover {
+    transform: scale(1.05); /* Enlarge the image on hover */
+}
+
+.artwork-description {
+    flex: 1; /* This will allow the text section to take up the remaining space */
+    display: flex;
+    width: 75%;
+    flex-direction: column;
+    justify-content: center; /* Center the content vertically */
+    align-items: center; /* Center the content horizontally */
+    padding: 2%; /* Adjust padding as needed */
+    margin: 0 2%; /* Add margin to the left and right */
+}
+
+.h1-artwork, .paragraph-artwork {
+    margin-bottom: 20px; /* Add some bottom margin for spacing */
+    text-align: center;
+}
+
+.h1-artwork {
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    font-size: 75px;
+}
+
+.paragraph-artwork {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: black;
+    text-align: center;
+    width: 90%;
+}
