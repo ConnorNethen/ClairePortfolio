@@ -96,7 +96,7 @@
     .profile {
         height: auto; /* Allow the height to grow as needed */
         background-image: none;
-        background-color: whitesmoke;
+        background-color: #CBC3E3;
     }
 
     .h1-profile {
@@ -129,7 +129,7 @@
 @media (max-width: 480px) {
     .profile {
         background-image: none;
-        background-color: whitesmoke;
+        background-color: #CBC3E3;
     }
 
     .h1-profile {
