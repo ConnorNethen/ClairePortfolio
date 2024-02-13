@@ -18,13 +18,13 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='/styles/animations.css')}}">
     
     <link rel="stylesheet" href="{{ url_for('static', filename='/styles/artwork.css')}}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='/styles/contact.css')}}">
     
     
 </head>
 <body style="margin: 0em">
-    <script src="{{ url_for('static', filename='/javascript/navigationbar.js') }}"></script>
-    <script src="{{ url_for('static', filename='/javascript/carousel.js') }}"></script>
-
+    
     <!-- Navigation Bar (Mounted On Top)-->
     <nav class="navbar" id="navbar">
       <a class="navbar-brand" href="#Top-Page">Claire Hanel</a>
@@ -39,7 +39,7 @@
               <img src="{{ url_for('static', filename='assets/Icons/paint_brush.png')}}" class="toggler-img" alt="Toggler Icon" id="toggler-img">
           </div>
       </div>
-  </nav>
+    </nav>
 
     <!-- Carousel Section-->
     <div id="Top-Page" class="c-container">
@@ -216,5 +216,21 @@
             </div>
         </div>
     </div>
+
+    <!-- Contact Section -->
+    <form id="contactForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea><br>
+        <button type="button" onclick="handleSubmit(event)">Submit</button>
+    </form>
+
+    
+    <script src="{{ url_for('static', filename='/javascript/navigationbar.js') }}"></script>
+    <script src="{{ url_for('static', filename='/javascript/carousel.js') }}"></script>
+    <script src="{{ url_for('static', filename='/javascript/contact.js') }}"></script>
 </body>
 </html>
