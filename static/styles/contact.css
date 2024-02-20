@@ -40,6 +40,7 @@
 
 .header {
     font-size: 75px;
+    padding: 0;
 }
 
 .contact-form {
@@ -70,7 +71,7 @@ button {
     cursor: pointer;
     transition: background-color 0.5s ease;
     width: 80%;
-    height: 10%;
+    height: 10% auto;
     border-radius: 8px;
 
     display: block; /* Add this line */
@@ -88,4 +89,37 @@ button:active {
 button:focus {
     outline: none;
     box-shadow: 0 0 0 2px rgba(0, 128, 0, 0.5);
+}
+
+/* Larger screen */
+@media (max-width: 1024px) {
+    .header {
+        font-size: 60px;
+    }
+
+    .label {
+        font-size: 20px;
+    }
+}
+
+/* Tablet and smaller devices (<=768px) */
+@media (max-width: 768px) {
+    .header {
+        font-size: 45px;
+    }
+
+    .label {
+        font-size: 17px;
+    }
+}
+  
+/* Smartphone and smaller devices (<=480px) */
+@media (max-width: 480px) {
+    .header {
+        font-size: 30px;
+    }
+
+    .label {
+        font-size: 14px;
+    }
 }
