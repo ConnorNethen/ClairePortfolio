@@ -12,7 +12,7 @@
 
 .navbar-brand {
     color: #000000;
-    font-size: 40px;
+    font-size: 43px;
     font-family: 'Amarante';
     margin-left: 0.5%;
     font-style: italic;
@@ -109,7 +109,7 @@
     
     .navbar-brand:hover {
         text-decoration-line: underline;
-        font-size: 43px;
+        font-size: 46px;
     }
 }
 

@@ -32,9 +32,11 @@
     align-items: center;
     justify-content: center;
     width: 28%;
-    margin: 0.5%; /* Adjusted margin for spacing around images */
+    margin: 0.25%; /* Adjusted margin for spacing around images */
     padding: 0;
     box-sizing: border-box;
+
+    overflow: hidden;
 }
 
 .artwork-image {
