@@ -28,11 +28,14 @@
 }
 
 .right-column {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+
     justify-content: center;
     align-items: center;
+    max-width: 50%;
 }
 
-/* Adjust the .img-contact class as needed to fit the image within the left column */
 .img-contact {
     max-width: 70%;
     height: auto; /* Adjust as needed */
@@ -45,19 +48,33 @@
 
 .contact-form {
     margin-top: 10%;
+    margin-bottom: 7.5%;
     width: 80%;
-    height: 80%;
 }
 
-.label {
-    font-size: 25px;
+.input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
 }
 
 input, textarea {
-    height: 5%;
     width: 100%;
-    margin-bottom: 2%;
+    max-width: 100%;
     box-sizing: border-box;
+    font-size: 20px;
+    text-indent: 1%;
+}
+
+input {
+    height: auto;
+    min-height: 50px;
+}
+
+textarea {
+    height: auto;
+    min-height: fit-content;
+    max-height: 200%;
 }
 
 button {
@@ -74,8 +91,8 @@ button {
     height: 10% auto;
     border-radius: 8px;
 
-    display: block; /* Add this line */
-    margin: 0 auto; /* Add this line */
+    display: block;
+    margin: 0 auto;
 }
 
 button:hover {
@@ -91,6 +108,85 @@ button:focus {
     box-shadow: 0 0 0 2px rgba(0, 128, 0, 0.5);
 }
 
+.submit-wrapper {
+    position: relative;
+    text-align: center; /* Center the button if needed */
+}
+
+.confirmationPopup {
+    display: none; /* Initially hidden */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -125%;
+
+    background-color: rgb(230, 0, 0); /* Default to error color, will be overridden by JS */
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px;
+    z-index: 1;
+    white-space: nowrap;
+}
+
+.allPopup {
+    display: none; /* Initially hidden */
+    position: absolute;
+    left: 50%; /* Center horizontally in the .right-column */
+    transform: translateX(-50%); /* Adjust horizontal positioning to truly center */
+    bottom: 115%; /* Adjust this value based on your layout to move it above the name field */
+
+    background-color: rgb(230, 0, 0);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px;
+    z-index: 1;
+    white-space: nowrap;
+}
+
+.popup {
+    display: none; /* Initially hidden */
+    position: absolute;
+    /* Position towards the right inside the input field */
+    left: 75%;
+    top: 15%;
+
+    background-color: rgb(230, 0, 0);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px;
+    z-index: 1;
+    white-space: nowrap;
+}
+
+/* Popup arrow */
+.popup::after {
+    content: "";
+    position: absolute;
+    /* Align arrow to the left side and center of the popup */
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 7px;
+    border-style: solid;
+    border-color: transparent rgb(230, 0, 0) transparent transparent; /* Arrow points left */
+}
+
+/* Animation fade in */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* Animation fade out */
+@keyframes fadeOut {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+
 /* Larger screen */
 @media (max-width: 1024px) {
     .header {
@@ -99,6 +195,46 @@ button:focus {
 
     .label {
         font-size: 20px;
+    }
+
+    input, textarea {
+        font-size: 15px;
+    }
+
+    input {
+        min-height: 40px;
+    }
+
+    .confirmationPopup {
+        font-size: 12px;
+        border-radius: 5px;
+        padding: 7px;
+    }
+
+    .allPopup {
+        font-size: 12px;
+        border-radius: 5px;
+        padding: 7px;
+    }
+
+    .popup {
+        left: 65%;
+        font-size: 12px;
+        border-radius: 5px;
+        padding: 7px;
+
+    }
+    
+    .popup::after {
+        margin-top: -4px;
+        border-width: 6px;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+        
+        transition: none;
     }
 }
 
@@ -111,6 +247,46 @@ button:focus {
     .label {
         font-size: 17px;
     }
+
+    input, textarea {
+        font-size: 12px;
+    }
+
+    input {
+        min-height: 30px;
+    }
+
+    .confirmationPopup {
+        font-size: 10px;
+        border-radius: 5px;
+        padding: 6px;
+    }
+
+    .allPopup {
+        font-size: 10px;
+        border-radius: 5px;
+        padding: 6px;
+    }
+
+    .popup {
+        left: 60%;
+        font-size: 10px;
+        border-radius: 5px;
+        padding: 6px;
+
+    }
+    
+    .popup::after {
+        margin-top: -4px;
+        border-width: 5px;
+    }
+
+    button {
+        padding: 6px 12px;
+        font-size: 12px;
+        
+        transition: none;
+    }
 }
   
 /* Smartphone and smaller devices (<=480px) */
@@ -121,5 +297,45 @@ button:focus {
 
     .label {
         font-size: 14px;
+    }
+
+    input, textarea {
+        font-size: 10px;
+    }
+
+    input {
+        min-height: 20px;
+    }
+
+    .confirmationPopup {
+        font-size: 8px;
+        border-radius: 5px;
+        padding: 5px;
+    }
+
+    .allPopup {
+        font-size: 8px;
+        border-radius: 5px;
+        padding: 5px;
+    }
+
+    .popup {
+        left: 55%;
+        font-size: 8px;
+        border-radius: 5px;
+        padding: 5px;
+
+    }
+    
+    .popup::after {
+        margin-top: -4px;
+        border-width: 4px;
+    }
+
+    button {
+        padding: 5px 10px;
+        font-size: 10px;
+        
+        transition: none;
     }
 }
