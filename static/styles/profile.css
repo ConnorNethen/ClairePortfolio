@@ -102,7 +102,10 @@
     .h1-profile {
         font-size: 2rem; /* Smaller font size on mobile devices */
     }
+    
     .container-profile {
+        margin-top: 10%;
+        margin-bottom: 10%;
         justify-content: center; /* Center the contents on smaller screens */
     }
 
@@ -137,6 +140,8 @@
     }
 
     .container-profile {
+        margin-top: 10%;
+        margin-bottom: 10%;
         justify-content: center;
         align-items: center;
     }
