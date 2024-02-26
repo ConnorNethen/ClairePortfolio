@@ -1,12 +1,18 @@
 .contact {
-    padding-top: 5%;
+    padding-top: 3%;
     font-family: Arial, sans-serif;
 }
 
-.h1-contact {
-    padding: 0px;
-    margin: 0px;
-    font-size: 75px;
+.header-section{
+    padding-bottom: 5%;
+    text-align: center;
+    font-size: 17px;
+}
+
+.header {
+    font-size: 65px;
+    padding: 0;
+    margin: 0;
 }
 
 .container-contact {
@@ -18,7 +24,7 @@
 }
 
 .left-column, .right-column {
-    flex: 1; /* This makes both columns take up equal space, adjust as necessary */
+    flex: 1; /* This makes both columns take up equal space */
     display: flex;
 }
 
@@ -39,11 +45,6 @@
 .img-contact {
     max-width: 70%;
     height: auto; /* Adjust as needed */
-}
-
-.header {
-    font-size: 75px;
-    padding: 0;
 }
 
 .contact-form {
@@ -74,6 +75,7 @@ input {
 textarea {
     height: auto;
     min-height: fit-content;
+    min-width: 100%;
     max-height: 200%;
 }
 
@@ -86,26 +88,12 @@ button {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.5s ease;
     width: 80%;
     height: 10% auto;
     border-radius: 8px;
 
     display: block;
     margin: 0 auto;
-}
-
-button:hover {
-    background-color: darkgreen;
-}
-
-button:active {
-    background-color: lightgreen;
-}
-
-button:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px rgba(0, 128, 0, 0.5);
 }
 
 .submit-wrapper {
@@ -186,11 +174,34 @@ button:focus {
     to {opacity: 0;}
 }
 
+/* Button animation only visibile on larger screens */
+@media (min-width: 1024px) {
+    button {
+        transition: background-color 0.5s ease;
+    }
+    
+    button:hover {
+        background-color: darkgreen;
+    }
+    
+    button:active {
+        background-color: lightgreen;
+    }
+    
+    button:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(0, 128, 0, 0.5);
+    }
+}
 
 /* Larger screen */
 @media (max-width: 1024px) {
+    .header-section{
+        font-size: 14px;
+    }
+
     .header {
-        font-size: 60px;
+        font-size: 50px;
     }
 
     .label {
@@ -240,8 +251,12 @@ button:focus {
 
 /* Tablet and smaller devices (<=768px) */
 @media (max-width: 768px) {
+    .header-section{
+        font-size: 12px;
+    }
+
     .header {
-        font-size: 45px;
+        font-size: 37px;
     }
 
     .label {
@@ -291,8 +306,12 @@ button:focus {
   
 /* Smartphone and smaller devices (<=480px) */
 @media (max-width: 480px) {
+    .header-section{
+        font-size: 10px;
+    }
+
     .header {
-        font-size: 30px;
+        font-size: 25px;
     }
 
     .label {
