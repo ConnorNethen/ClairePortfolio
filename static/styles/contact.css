@@ -247,6 +247,7 @@ button {
     button {
         padding: 8px 16px;
         font-size: 14px;
+        margin-top: 2%;
         
         transition: none;
     }
@@ -302,6 +303,7 @@ button {
     button {
         padding: 6px 12px;
         font-size: 12px;
+        margin-top: 1.5%;
         
         transition: none;
     }
@@ -357,6 +359,7 @@ button {
     button {
         padding: 5px 10px;
         font-size: 10px;
+        margin-top: 1%;
         
         transition: none;
     }
