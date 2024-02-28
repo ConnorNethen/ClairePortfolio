@@ -20,6 +20,7 @@
     max-height: 100vh;
     margin: 0 auto;
     padding: 3.5%;
+    padding-bottom: 2.5%;
     display: flex;
 }
 
@@ -43,8 +44,9 @@
 }
 
 .img-contact {
-    max-width: 70%;
-    height: auto; /* Adjust as needed */
+    max-width: 100%;
+    height: auto;
+    max-height: 90%;
 }
 
 .contact-form {
@@ -91,9 +93,10 @@ button {
     width: 80%;
     height: 10% auto;
     border-radius: 8px;
-
     display: block;
     margin: 0 auto;
+
+    margin-top: 2.5%;
 }
 
 .submit-wrapper {
@@ -106,7 +109,7 @@ button {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: -125%;
+    bottom: -110%;
 
     background-color: rgb(230, 0, 0); /* Default to error color, will be overridden by JS */
     color: #fff;
