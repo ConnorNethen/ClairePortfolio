@@ -26,24 +26,25 @@
     flex-wrap: wrap;
     justify-content: center; /* Center images within the container */
     align-items: center;
+
+    column-width: 225px; /* Adjust this value as needed */
+    column-gap: 1em;
+    max-width: 60%;
+    display: block; /* Change to block display for column-width to work */
 }
 
 .artwork-img-container {
-    align-items: center;
-    justify-content: center;
-    width: 28%;
-    margin: 0.25%; /* Adjusted margin for spacing around images */
-    padding: 0;
-    box-sizing: border-box;
-
-    overflow: hidden;
+    margin-bottom: 1em;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    width: 100%; /* Reset the width to default to avoid overflow */
 }
 
 .artwork-image {
-    width: 100%; /* Make images take up the full width of their container */
-    height: auto; /* Maintain aspect ratio */
-    justify-content: center;
-    align-self: center;
+    width: 100%; /* Full width of the column */
+    height: auto;
+    display: block;
     transition: transform 0.5s, opacity 1s;
 }
 
@@ -93,10 +94,6 @@
         font-size: 16px;
     }
 
-    .artwork-img-container {
-        width: 33%;
-    }
-
     .artwork-image {
         transition: none, none;
     }
@@ -117,10 +114,6 @@
         font-size: 14px;
     }
 
-    .artwork-img-container {
-        width: 38%;
-    }
-
     .artwork-image {
         transition: none, none;
     }
@@ -139,10 +132,6 @@
 
     .paragraph-artwork {
         font-size: 12px;
-    }
-
-    .artwork-img-container {
-        width: 43%;
     }
 
     .artwork-image {
