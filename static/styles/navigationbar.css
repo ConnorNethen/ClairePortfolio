@@ -22,11 +22,10 @@
 .navbar-toggler {
     color: black;
     cursor: pointer;
-    height: 50px;
-    width: 50px;
-    min-height: 50px;
-    min-width: 50px;
-    font-size: 24px; /* Adjust the font size as needed */
+    height: 55px;
+    width: 55px;
+    min-height: 55px;
+    min-width: 55px;
 
     display: flex; /* Make it a flex container */
     justify-content: center; /* Center children horizontally */
@@ -35,7 +34,7 @@
     border: 2px solid #000000; /* Heavier border: width, style, color */
     border-radius: 10px; /* Make the corners slightly rounded */
 
-    transition: background-color 0.4s ease;
+    transition: background-color 0.4s ease, border-radius 0.4s ease;
 }
 
 .navbar-toggler:hover, .navbar-toggler:focus {
@@ -51,6 +50,10 @@
 
 .transformed-toggler-img {
     transform: rotate(180deg) scale(1.25);
+}
+
+.navbar-toggler-expanded {
+    border-radius: 0px;
 }
 
 .nav-items {
@@ -96,11 +99,6 @@
     white-space: nowrap; 
 }
 
-.nav-link:hover {
-    text-decoration: underline;
-    font-size: 23px;
-}
-
 /* Larger screen */
 @media (min-width: 1024px) {
     .navbar-brand {
@@ -110,6 +108,33 @@
     .navbar-brand:hover {
         text-decoration-line: underline;
         font-size: 46px;
+    }
+
+    .nav-link:hover {
+        text-decoration: underline;
+        font-size: 23px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .navbar-brand {
+        font-size: 33px;
+    }
+
+    .nav-link {
+        font-size: 17px;
+    }
+
+    .navbar-toggler {
+        height: 45px;
+        width: 45px;
+        min-height: 45px;
+        min-width: 45px;
+    }
+
+    .toggler-img {
+        height: 25px;
+        width: 25px;
     }
 }
 
@@ -121,10 +146,6 @@
 
     .nav-link {
         font-size: 15px; /* Smaller font size for navigation links */
-    }
-
-    .nav-link:hover {
-        font-size: 17px;
     }
 
     .nav-items {
@@ -155,11 +176,7 @@
     }
   
     .nav-link {
-        font-size: 13px; /* Further reduce font size for navigation links */
-    }
-
-    .nav-link:hover {
-        font-size: 15px;
+        font-size: 11px; /* Further reduce font size for navigation links */
     }
 
     .nav-items {
@@ -167,24 +184,19 @@
     }
 
     .nav-item {
-        margin: 0 1%; /* Further reduce margin between nav items */
-    }
-  
-    /* Adjust navbar padding or layout as needed for very small screens */
-    .navbar {
-        padding: 0.5rem 1%; /* Adjust the padding to ensure everything fits */
+        margin: 0 2.5%; /* Further reduce margin between nav items */
     }
   
     /* Consider adjusting the navbar-toggler size if necessary */
     .navbar-toggler {
-        height: 30px;
-        width: 30px;
-        min-height: 30px; /* Slightly smaller */
-        min-width: 30px; /* Slightly smaller */
+        height: 35px;
+        width: 35px;
+        min-height: 35px; /* Slightly smaller */
+        min-width: 35px; /* Slightly smaller */
     }
 
     .toggler-img {
-        height: 20px;
-        width: 20px;
+        height: 22px;
+        width: 22px;
     }
   }

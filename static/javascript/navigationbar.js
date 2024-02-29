@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function toggleNavbar() {
         isOpen = !isOpen;
         navItems.classList.toggle('nav-items-visible');
+        document.getElementById('navbar-toggler').classList.toggle('navbar-toggler-expanded'); // Toggle border-radius class
         if (isOpen) {
             togglerImg.src = '/static/assets/Icons/x_icon.png';
             togglerImg.classList.add('transformed-toggler-img');
@@ -48,6 +49,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Close the navigation bar
     function closeNavbar() {
+        if (isOpen) {
+            document.getElementById('navbar-toggler').classList.remove('navbar-toggler-expanded'); // Ensure border-radius returns to normal
+        }
         isOpen = false;
         navItems.classList.remove('nav-items-visible');
         togglerImg.src = '/static/assets/Icons/paint_brush.png';
