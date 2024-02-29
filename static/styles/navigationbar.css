@@ -173,6 +173,7 @@
   @media (max-width: 480px) {
     .navbar-brand {
         font-size: 19px; /* Even smaller font size for navbar brand */
+        width: 29%;
     }
   
     .nav-link {
@@ -180,7 +181,7 @@
     }
 
     .nav-items {
-        margin-right: 6%;
+        margin-right: 9%;
     }
 
     .nav-item {
