@@ -37,11 +37,6 @@
     transition: background-color 0.4s ease, border-radius 0.4s ease;
 }
 
-.navbar-toggler:hover, .navbar-toggler:focus {
-    background-color: white;
-    outline: none;
-}
-
 .toggler-img {
     height: 30px;
     width: 30px;
@@ -54,6 +49,7 @@
 
 .navbar-toggler-expanded {
     border-radius: 0px;
+    outline: none;
 }
 
 .nav-items {
@@ -104,6 +100,11 @@
     .navbar-brand {
         transition: font-size 0.7s ease;
     }
+
+    .navbar-toggler:hover, .navbar-toggler:focus {
+        background-color: white;
+        outline: none;
+    }
     
     .navbar-brand:hover {
         text-decoration-line: underline;
@@ -135,6 +136,10 @@
     .toggler-img {
         height: 25px;
         width: 25px;
+    }
+
+    .navbar-toggler-expanded {
+        background-color: white;
     }
 }
 
