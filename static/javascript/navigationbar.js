@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('navbar-toggler').addEventListener('click', toggleNavbar);
 
     // Enhance navigation links with smooth scrolling and auto-closing of the navigation bar
-    document.querySelectorAll('.nav-link').forEach(link => {
+    document.querySelectorAll('.nav-link, .navbar-brand').forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
