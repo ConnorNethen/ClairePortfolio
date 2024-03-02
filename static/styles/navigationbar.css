@@ -21,39 +21,12 @@
     text-decoration-line: none;
 }
 
-/* Navbar Toggler Class */
-.navbar-toggler {
-    color: black;
-    cursor: pointer;
-    height: 55px;
-    width: 55px;
-    min-height: 55px;
-    min-width: 55px;
+/* Navbar Group (Items and Toggler) */
+.nav-group {
     display: flex;
-    justify-content: center; /* Center children horizontally */
+    margin-right: 0.5%; /* Slight margin between navbar toggler and right side of page */
+    justify-content: flex-end; /* Aligns children to the right */
     align-items: center; /* Center children vertically */
-    border: 2px solid #000000; /* width, style, color */
-    border-radius: 10px; /* Make the corners slightly rounded */
-
-    transition: background-color 0.5s ease, border-radius 0.5s ease; /* Transition effect for narbar toggler */
-}
-
-/* Toggler Image Class */
-.toggler-img {
-    height: 30px;
-    width: 30px;
-    transition: transform 0.4s ease;
-}
-
-/* Transformed Toggler Image Class */
-.transformed-toggler-img {
-    transform: rotate(180deg) scale(1.25);
-}
-
-/* Transformed Toggler Class */
-.transformed-toggler {
-    border-radius: 0px;
-    outline: none;
 }
 
 /* Navbar Items Class (Hidden) */
@@ -78,14 +51,6 @@
     opacity: 1;
 }
 
-/* Navbar Group (Items and Toggler) */
-.nav-group {
-    display: flex;
-    margin-right: 0.5%; /* Slight margin between navbar toggler and right side of page */
-    justify-content: flex-end; /* Aligns children to the right */
-    align-items: center; /* Center children vertically */
-}
-
 /* Navbar Item Class */
 .nav-item {
     margin: 0 2.5%; /* Add margin between navbar items */
@@ -99,6 +64,41 @@
     text-decoration: none;
     transition: font-size 0.4s ease; /* Transition effect for changing font-size */
     white-space: nowrap; 
+}
+
+/* Navbar Toggler Class */
+.navbar-toggler {
+    color: black;
+    cursor: pointer;
+    height: 55px;
+    width: 55px;
+    min-height: 55px;
+    min-width: 55px;
+    display: flex;
+    justify-content: center; /* Center children horizontally */
+    align-items: center; /* Center children vertically */
+    border: 2px solid #000000; /* width, style, color */
+    border-radius: 10px; /* Make the corners slightly rounded */
+
+    transition: background-color 0.5s ease, border-radius 0.5s ease; /* Transition effect for narbar toggler */
+}
+
+/* Toggler Image Class */
+.toggler-img {
+    height: 30px;
+    width: 30px;
+    transition: transform 0.4s ease;
+}
+
+/* Transformed Toggler Class */
+.transformed-toggler {
+    border-radius: 0px;
+    outline: none;
+}
+
+/* Transformed Toggler Image Class */
+.transformed-toggler-img {
+    transform: rotate(180deg) scale(1.25);
 }
 
 /* Min-Width: 1024px */
