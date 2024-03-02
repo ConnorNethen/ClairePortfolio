@@ -5,62 +5,63 @@ document.addEventListener('DOMContentLoaded', () => {
     const navItems = document.getElementById('nav-items');
     const togglerImg = document.getElementById('toggler-img');
 
+    // Function that handles user scrolling
     function handleScroll() {
-        // User is actively scrolling
-        navbar.style.backgroundColor = 'transparent';
-        closeNavbar(); // Close the navbar menu
+        // User is actively scrolling ...
+        navbar.style.backgroundColor = 'transparent'; // Make navigation bar transparent
+        closeNavbar(); // Close navigation bar
         
-        // Throttle updates to reduce repaints and improve performance
         clearTimeout(scrollTimeout);
         scrollTimeout = setTimeout(() => {
             // After 300ms of no scroll events, consider the scrolling stopped
-            if (window.scrollY > 0) {
-                // If not at the top, restore the navbar's original background color
-                navbar.style.backgroundColor = '#848B79'; // Reset to stylesheet default or set a specific color
-            } else {
-                // User is at the top of the page, can keep navbar transparent or set to default
+            if (window.scrollY > 0) { // If not at the top, restore the navigation bar's original background color
+                navbar.style.backgroundColor = '#848B79';
+            } else { // If at the top, keep navigation bar transparent
                 navbar.style.backgroundColor = 'transparent';
             }
         }, 300);
     }
 
-    // Attach event listener for scroll events
+    // Event listener for scroll events
     window.addEventListener('scroll', handleScroll);
     
-    // Toggle the navigation bar's visibility and appearance
+    // Function to toggle the navigation bar's visibility and appearance
     function toggleNavbar() {
         isOpen = !isOpen;
-        navItems.classList.toggle('nav-items-visible');
-        document.getElementById('navbar-toggler').classList.toggle('navbar-toggler-expanded'); // Toggle border-radius class
-        if (isOpen) {
-            togglerImg.src = '/static/assets/Icons/x_icon.png';
-            togglerImg.classList.add('transformed-toggler-img');
-            navbar.style.backgroundColor = '#848B79';
-        } else {
-            togglerImg.src = '/static/assets/Icons/paint_brush.png';
-            togglerImg.classList.remove('transformed-toggler-img');
-            if (window.scrollY > 0) {
+        navItems.classList.toggle('nav-items-visible'); // Make navigation items visible
+        document.getElementById('navbar-toggler').classList.toggle('transformed-toggler'); // Toggle border-radius class
+        if (isOpen) { // If navigation bar is open ...
+            togglerImg.src = '/static/assets/Icons/x_icon.png'; // Set toggler image to 'X' icon
+            togglerImg.classList.add('transformed-toggler-img'); // Add transformed toggler image class
+            navbar.style.backgroundColor = '#848B79'; // Set navigation bar background color to orginal
+        } else { // If the navigation bar is closed ...
+            togglerImg.src = '/static/assets/Icons/paint_brush.png'; // Set toggler image to paint brush
+            togglerImg.classList.remove('transformed-toggler-img'); // Remove transformed toggler image class
+
+            // Check position of user on the page
+            if (window.scrollY > 0) { // If not at the top, restore the navigation bar's orginal background color
                 navbar.style.backgroundColor = '#848B79';
-            } else {
+            } else { // If at the top, keep navigation bar transparent
                 navbar.style.backgroundColor = 'transparent';
             }
         }
     }
 
-    // Close the navigation bar
+    // Function that closes the navigation bar
     function closeNavbar() {
-        if (isOpen) {
-            document.getElementById('navbar-toggler').classList.remove('navbar-toggler-expanded'); // Ensure border-radius returns to normal
+        if (isOpen) { // If the navbar is open, remove transformed toggler class
+            document.getElementById('navbar-toggler').classList.remove('transformed-toggler'); // Ensure border-radius returns to normal
         }
         isOpen = false;
-        navItems.classList.remove('nav-items-visible');
-        togglerImg.src = '/static/assets/Icons/paint_brush.png';
-        togglerImg.classList.remove('transformed-toggler-img');
+        navItems.classList.remove('nav-items-visible'); // Hide navigation items
+        togglerImg.src = '/static/assets/Icons/paint_brush.png'; // Set toggler image to paint brush
+        togglerImg.classList.remove('transformed-toggler-img'); // Remove transformed toggler image class
     }
 
+    // Event listener for navigation bar toggle
     document.getElementById('navbar-toggler').addEventListener('click', toggleNavbar);
 
-    // Enhance navigation links with smooth scrolling and auto-closing of the navbar
+    // Enhance navigation links with smooth scrolling and auto-closing of the navigation bar
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();

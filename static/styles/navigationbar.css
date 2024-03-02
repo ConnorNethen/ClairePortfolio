@@ -1,24 +1,27 @@
+/* Navbar Class */
 .navbar {
     position: fixed;
     top: 0;
     z-index: 1020;
     display: flex;
-    align-items: center;
+    align-items: center; /* Center children vertically */
     padding: 0.5%;
     width: 99%;
-    justify-content: space-between;
+    justify-content: space-between; /* Space between navbar-brand and nav-group classes */
     transition: background-color 0.8s ease; /* Add transition for background-color */
 }
 
+/* Navbar Brand Class */
 .navbar-brand {
     color: #000000;
     font-size: 43px;
-    font-family: 'Amarante';
-    margin-left: 0.5%;
+    font-family: 'Amarante'; /* MAY CHANGE */
+    margin-left: 0.5%; /* Slight margin to left of navbar brand */
     font-style: italic;
     text-decoration-line: none;
 }
 
+/* Navbar Toggler Class */
 .navbar-toggler {
     color: black;
     cursor: pointer;
@@ -26,77 +29,81 @@
     width: 55px;
     min-height: 55px;
     min-width: 55px;
-
-    display: flex; /* Make it a flex container */
+    display: flex;
     justify-content: center; /* Center children horizontally */
     align-items: center; /* Center children vertically */
-
-    border: 2px solid #000000; /* Heavier border: width, style, color */
+    border: 2px solid #000000; /* width, style, color */
     border-radius: 10px; /* Make the corners slightly rounded */
 
-    transition: background-color 0.4s ease, border-radius 0.4s ease;
+    transition: background-color 0.5s ease, border-radius 0.5s ease; /* Transition effect for narbar toggler */
 }
 
+/* Toggler Image Class */
 .toggler-img {
     height: 30px;
     width: 30px;
-    transition: transform 0.3s ease;
+    transition: transform 0.4s ease;
 }
 
+/* Transformed Toggler Image Class */
 .transformed-toggler-img {
     transform: rotate(180deg) scale(1.25);
 }
 
-.navbar-toggler-expanded {
+/* Transformed Toggler Class */
+.transformed-toggler {
     border-radius: 0px;
     outline: none;
 }
 
+/* Navbar Items Class (Hidden) */
 .nav-items {
     display: flex;
     list-style: none;
     margin: 0;
-    padding: 0;
     justify-content: center; /* Center items horizontally */
-    align-items: center; /* Align the items vertically */
-    margin-right: 1.5%;
-
-    transform: translateX(50%) scale(0); /* Initially, move the nav-items to the right */
-    transition: transform 0.6s ease, opacity 0.6s ease,  visibility 0s linear 0.35s; /* Transition effect for sliding and fading in */
+    align-items: center;
+    margin-right: 12%; /* Margin on right side of items */
+    transform: translateX(65%) scale(0); /* Initially, move the nav-items to the right */
+    transition: transform 0.6s ease, opacity 0.6s ease,  visibility 0.6s; /* Transition effect for sliding and fading away */
     visibility: hidden; /* Start hidden */
     opacity: 0;
 }
 
+/* Navbar Items Class (Visibile) */
 .nav-items-visible {
-    transform: translateX(0) scale(1); /* Move nav-items back to original position when visible */
-    transition: transform 0.6s ease, opacity 0.6s ease;
-    visibility: visible;
+    transform: translateX(0) scale(1); /* When visible, move nav-items back to the visible position */
+    transition: transform 0.6s ease, opacity 0.6s ease; /* Transition effect for sliding and fading in */
+    visibility: visible; /* Make visible */
     opacity: 1;
 }
 
+/* Navbar Group (Items and Toggler) */
 .nav-group {
     display: flex;
-    margin-right: 0.5%;
-
-    justify-content: flex-end; /* Aligns children (nav-items and toggler) to the right */
-    align-items: center;
+    margin-right: 0.5%; /* Slight margin between navbar toggler and right side of page */
+    justify-content: flex-end; /* Aligns children to the right */
+    align-items: center; /* Center children vertically */
 }
 
+/* Navbar Item Class */
 .nav-item {
-    margin: 0 15px;
+    margin: 0 2.5%; /* Add margin between navbar items */
 }
 
+/* Navbar Link Class */
 .nav-link {
     color: #000000;
     font-size: 20px;
-    font-family: 'Catamaran';
+    font-family: 'Catamaran'; /* MAY CHANGE */
     text-decoration: none;
-    transition: font-size 0.4s ease;
+    transition: font-size 0.4s ease; /* Transition effect for changing font-size */
     white-space: nowrap; 
 }
 
-/* Larger screen */
+/* Min-Width: 1024px */
 @media (min-width: 1024px) {
+    /* Animations for navbar brand, navbar toggler, and nav links */
     .navbar-brand {
         transition: font-size 0.7s ease;
     }
@@ -108,101 +115,108 @@
     
     .navbar-brand:hover {
         text-decoration-line: underline;
-        font-size: 46px;
+        font-size: 46px; /* enlarge from 43px */
     }
 
     .nav-link:hover {
         text-decoration: underline;
-        font-size: 23px;
+        font-size: 23px; /* enlarge from 20px */
     }
 }
 
+/* Max-Width: 1024px */
 @media (max-width: 1024px) {
+    /* Navbar brand resizing */
     .navbar-brand {
-        font-size: 33px;
+        font-size: 33px; /* from 43px */
     }
 
+    /* Nav link resizing */
     .nav-link {
-        font-size: 17px;
+        font-size: 17px; /* from 20px */
     }
 
+    /* Navbar toggler resizing */
     .navbar-toggler {
-        height: 45px;
-        width: 45px;
-        min-height: 45px;
-        min-width: 45px;
+        height: 45px; /* from 55px */
+        width: 45px; /* from 55px */
+        min-height: 45px; /* from 55px */
+        min-width: 45px; /* from 55px */
     }
 
+    /* Toggler image resizing */
     .toggler-img {
-        height: 25px;
-        width: 25px;
+        height: 25px; /* from 30px */
+        width: 25px; /* from 30px */
     }
 
-    .navbar-toggler-expanded {
-        background-color: white;
+    /* Transformed Toggler Class */
+    .transformed-toggler {
+        background-color: white; /* Make toggler background color white when nav links are visible */
     }
 }
 
-/* Tablet and smaller devices (<=768px) */
+/* Max-Width: 768px */
 @media (max-width: 768px) {
+    /* Navbar brand resizing */
     .navbar-brand {
-        font-size: 25px; /* Smaller font size for navbar brand */
+        font-size: 25px; /* from 33px */
     }
 
+    /* Nav link resizing */
     .nav-link {
-        font-size: 15px; /* Smaller font size for navigation links */
+        font-size: 15px; /* from 17px */
     }
 
+    /* Nav items margin change */
     .nav-items {
-        margin-right: 11%;
+        margin-right: 11%; /* from 12% */
     }
   
-    .nav-item {
-        margin: 0 2.5%; /* Reduce margin between nav items for more space */
-    }
-  
+    /* Navbar toggler resizing */
     .navbar-toggler {
-        height: 40px;
-        width: 40px;
-        min-height: 40px;
-        min-width: 40px;
+        height: 40px; /* from 45px */
+        width: 40px; /* from 45px */
+        min-height: 40px; /* from 45px */
+        min-width: 40px; /* from 45px */
     }
 
+    /* Toggler image resizing */
     .toggler-img {
-        height: 25px;
-        width: 25px;
+        height: 21px; /* from 25px */
+        width: 21px; /* from 25px */
     }
-  }
+}
   
-  /* Smartphone and smaller devices (<=480px) */
-  @media (max-width: 480px) {
+/* Max-Width: 480px */
+@media (max-width: 480px) {
+    /* Navbar brand resizing */
     .navbar-brand {
-        font-size: 19px; /* Even smaller font size for navbar brand */
-        width: 29%;
+        font-size: 19px; /* from 25px */
+        width: 29%; /* Width property added to eliminate overlap with nav items */
     }
-  
+
+    /* Nav link resizing */
     .nav-link {
-        font-size: 11px; /* Further reduce font size for navigation links */
+        font-size: 11px; /* from 15px */
     }
 
+    /* Nav items margin change */
     .nav-items {
-        margin-right: 9%;
+        margin-right: 9%; /* from 11% */
     }
 
-    .nav-item {
-        margin: 0 2.5%; /* Further reduce margin between nav items */
-    }
-  
-    /* Consider adjusting the navbar-toggler size if necessary */
+    /* Navbar toggler resizing */
     .navbar-toggler {
-        height: 35px;
-        width: 35px;
-        min-height: 35px; /* Slightly smaller */
-        min-width: 35px; /* Slightly smaller */
+        height: 35px; /* from 40px */
+        width: 35px; /* from 40px */
+        min-height: 35px; /* from 40px */
+        min-width: 35px; /* from 40px */
     }
 
+    /* Toggler image resizing */
     .toggler-img {
-        height: 22px;
-        width: 22px;
+        height: 18px; /* from 21px */
+        width: 18px; /* from 21px */
     }
-  }
+}
