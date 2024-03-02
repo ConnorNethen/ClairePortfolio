@@ -25,23 +25,27 @@
 </head>
 <body style="margin: 0em">
     
-    <!-- Navigation Bar (Mounted On Top)-->
+    <!-- Navigation Bar (Mounted On Top) -->
     <nav class="navbar" id="navbar">
-      <a class="navbar-brand" href="#Top-Page">Claire Hanel</a>
-      <div class="nav-group">
-          <ul class="nav-items" id="nav-items">
-              <li class="nav-item"><a class="nav-link" href="#About-Me">About Me</a></li>
-              <li class="nav-item"><a class="nav-link" href="#Animations">Animations</a></li>
-              <li class="nav-item"><a class="nav-link" href="#Artwork">Artwork</a></li>
-              <li class="nav-item"><a class="nav-link" href="#Contact">Contact</a></li>
-          </ul>
-          <div class="navbar-toggler" id="navbar-toggler">
-              <img src="{{ url_for('static', filename='assets/Icons/paint_brush.png')}}" class="toggler-img" alt="Toggler Icon" id="toggler-img">
-          </div>
-      </div>
+        <!-- Navbar Brand -->
+        <a class="navbar-brand" href="#Top-Page">Claire Hanel</a>
+        <!-- Navbar Group (Links & Toggler) -->
+        <div class="nav-group">
+            <!-- Navbar links -->
+            <ul class="nav-items" id="nav-items">
+                <li class="nav-item"><a class="nav-link" href="#About-Me">About Me</a></li>
+                <li class="nav-item"><a class="nav-link" href="#Artwork">Artwork</a></li>
+                <li class="nav-item"><a class="nav-link" href="#Animations">Animations</a></li>
+                <li class="nav-item"><a class="nav-link" href="#Contact">Contact</a></li>
+            </ul>
+            <!-- Navbar Toggler -->
+            <div class="navbar-toggler" id="navbar-toggler">
+                <img src="{{ url_for('static', filename='assets/Icons/paint_brush.png')}}" class="toggler-img" alt="Toggler Icon" id="toggler-img">
+            </div>
+        </div>
     </nav>
 
-    <!-- Carousel Section-->
+    <!-- Carousel Section -->
     <div id="Top-Page" class="c-container">
         <div class="c" id="carousel">
           <div class="c-item">
@@ -64,7 +68,7 @@
     </div>
 
 
-    <!-- Profile Section-->
+    <!-- Profile Section -->
     <div id="About-Me" class="profile">
       <div class="container-profile">
           <div class="profile-content">
