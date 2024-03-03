@@ -1,4 +1,5 @@
-.c-container {
+/* Carousel Container Class */
+.carousel-container {
     max-width: 100%;
     position: relative;
     overflow: hidden;
@@ -6,25 +7,26 @@
     object-fit: contain;
     background-color: rgb(218, 218, 218);
 }
-  
-.c {
+
+/* Carousel Class */
+.carousel {
     display: flex;
     transition: transform 0.75s ease-in-out;
 }
 
-.c-item {
+.carousel-item {
     flex: 0 0 100%;
     position: relative;
 }
   
-.c-item img {
+.carousel-item img {
     width: 100%;
     height: 100%;
     max-height: 100vh;
     object-fit: contain;
 }
   
-.c-caption {
+.carousel-caption {
     position: absolute;
     bottom: 35px;
     left: 0;
@@ -40,24 +42,24 @@
     position: absolute;
     top: 50%;
     width: auto;
-    padding: 16px;
+    padding: 5px;
     margin-top: -22px;
-    color: white;
     font-weight: bold;
     font-size: 18px;
     transition: 0.6s ease;
-    border-radius: 0;
+    border-radius: 20px;
+
     user-select: none;
 }
   
 .next {
     right: 0;
-    border-radius: 0;
+    margin-right: 2.5%;
 }
   
 .prev {
     left: 0;
-    border-radius: 0;
+    margin-left: 2.5%;
 }
   
 .prev img, .next img {
@@ -65,7 +67,7 @@
     height: 40px;
     transition: transform 0.6s ease;
 }
-  
+
 .prev img:hover, .next img:hover {
     transform: scale(1.4);
 }
@@ -82,7 +84,7 @@
     transform: none;
   }
 
-  .c-caption {
+  .carousel-caption {
     font-size: 18px;
   }
 }
@@ -99,7 +101,7 @@
     transform: none;
   }
 
-  .c-caption {
+  .carousel-caption {
     font-size: 16px;
   }
 }
