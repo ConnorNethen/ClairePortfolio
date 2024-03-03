@@ -26,7 +26,7 @@ def send_email():
     msg = Message('Contact Form Submission',
                   sender='spamportfolio1@gmail.com',
                   recipients=['ConnorNethen258@gmail.com'])
-    msg.body = f"{name} visited your website and would like to contact you!\nEmail: {email}\nMessage: {message_body}"
+    msg.body = f"{name} visited your website and would like to contact you!\nEmail: {email}\nMessage:\n{message_body}"
     mail.send(msg)
 
     return jsonify({'status': 'Email sent successfully'})
