@@ -47,12 +47,12 @@ async function handleSubmit(event) {
     if (response.ok) {
         console.log('Email sent successfully');
         document.getElementById('contactForm').reset(); // Clear the form
-        //alert('Email sent successfully!');
-        displayEmailAlert('Email has been sent succesfully!', 'confirmationPopup', true); // confirmation popup upon successful email
+        displayEmailAlert('Email has been sent succesfully!', 'confirmationPopup', true); // Confirmation popup upon successful email
     } else {
-        console.error('Error sending email');
-        //alert('Error sending email. Please try again.');
-        displayEmailAlert('Error sending email. Please try again.', 'confirmationPopup', false); // confirmation popup upon unsuccessful email
+        response.json().then(data => {
+            console.error('Error sending email:', data.error);
+            displayEmailAlert(data.error, 'confirmationPopup', false); // Display the specific error message
+        });
     }
 }
 
