@@ -6,7 +6,6 @@ import re
 from email_validator import validate_email, EmailNotValidError
 from datetime import datetime, timedelta
 import collections
-
 import logging
 
 load_dotenv()
@@ -55,17 +54,19 @@ mail = Mail(app)
 
 @app.route('/send_email', methods=['POST'])
 def send_email():
-    user_id = request.remote_addr  # Example: Use client IP as a simple identifier
+    ### Record and ensure the user can send an email (has not sent more that 2 emails in 2 minutes) ###
+    user_id = request.remote_addr  # Use client IP as a simple identifier
     allowed, waitTime = can_send_email(user_id)
-    if not allowed:
+    if not allowed: # User has already sent more than allowed number of emails in 2 minutes, deny email
         return jsonify({'error':'Rate limit exceeded. Please wait ' + str(waitTime) + ' seconds before sending another email.'}), 429
-    email_send_times[user_id].append(datetime.now()) # email can be send, update send times
 
     data = request.json
 
+    # Just in case... may be redundant (can remove later)
     if not data or 'name' not in data or 'email' not in data or 'message' not in data:
         return jsonify({'error':'Missing data'}), 400
     
+    # populate name, email, message_body fields
     name = data.get('name')
     email = data.get('email')
     message_body = data.get('message')
@@ -81,6 +82,7 @@ def send_email():
                     recipients=[os.getenv('RECIPIENT')])
         msg.body = f"{name} visited your website and would like to contact you!\nEmail: {email}\nMessage:\n{message_body}"
         mail.send(msg)
+        email_send_times[user_id].append(datetime.now()) # email can be send, update send times
     except Exception as e:
         return jsonify({'error': 'Failed to send email'}), 500
     
