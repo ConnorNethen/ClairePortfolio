@@ -139,10 +139,10 @@ button {
 .popup {
     display: none; /* Initially hidden */
     position: absolute;
-    /* Position towards the right inside the input field */
+    /* Position towards the right and centered vertically inside the input field */
     left: 75%;
-    top: 15%;
-
+    margin-top: auto;
+    margin-bottom: auto;
     background-color: rgb(230, 0, 0);
     color: #fff;
     text-align: center;
