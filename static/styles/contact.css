@@ -71,7 +71,8 @@ input, textarea {
     max-width: 100%;
     box-sizing: border-box;
     font-size: 20px;
-    text-indent: 1%;
+    padding-left: 1.5%;
+    padding-right: 1%;
     height: auto;
     min-height: 50px;
 }
@@ -97,6 +98,12 @@ button {
     display: block;
     margin: 0 auto;
     margin-top: 2.5%;
+    transition: background-color 0.5s ease-in;
+}
+
+.button-waiting {
+    background-color: lightgreen;
+    color: black;
 }
 
 .submit-wrapper {
@@ -178,14 +185,6 @@ button {
 
 /* Button animation only visibile on larger screens */
 @media (min-width: 1024px) {
-    button {
-        transition: background-color 0.5s ease;
-    }
-    
-    button:hover {
-        background-color: darkgreen;
-    }
-    
     button:active {
         background-color: lightgreen;
     }
@@ -247,8 +246,6 @@ button {
         padding: 8px 16px;
         font-size: 14px;
         margin-top: 2%;
-        
-        transition: none;
     }
 }
 
@@ -303,8 +300,6 @@ button {
         padding: 6px 12px;
         font-size: 12px;
         margin-top: 1.5%;
-        
-        transition: none;
     }
 }
   
@@ -359,7 +354,5 @@ button {
         padding: 5px 10px;
         font-size: 10px;
         margin-top: 1%;
-        
-        transition: none;
     }
 }

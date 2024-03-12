@@ -30,6 +30,10 @@ async function handleSubmit(event) {
         return; // stop the function
     }
 
+    // Indicate operation is starting by changing button color
+    submitButton.classList.add('button-waiting');
+    submitButton.textContent = 'Processing ...';
+
     // Disable submit button while send_email operation completes
     submitButton.disabled = true;
     
@@ -52,6 +56,10 @@ async function handleSubmit(event) {
         });
     }
 
+    // Operation completed, change button color back and re-enable it
+    submitButton.textContent = 'Submit';
+    submitButton.classList.remove('button-waiting');
+    
     // Re-enable the submit button after the send_email operation completes
     submitButton.disabled = false;
 }

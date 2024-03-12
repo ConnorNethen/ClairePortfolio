@@ -33,7 +33,7 @@ def can_send_email(user_id):
     logging.debug(f"Recent times for {user_id}: {recent_times}")
     
     # Check if less than 2 emails have been sent in the last minute
-    if len(recent_times) < 2:
+    if len(recent_times) < 10: ## CHANGE BACK TO 2
         return True, 0  # True to send, 0 wait time
     
     # If rate limit exceeded, calculate wait time based on the most recent email sent
@@ -92,7 +92,7 @@ def send_email():
 def validateInfo(n, em, m):
     # Validation patterns
     namePattern = re.compile('[^a-zA-Z\s]')
-    messagePattern = re.compile('[^a-zA-Z\s0-9,.!?@%$&():;"]')
+    messagePattern = re.compile('[^a-zA-Z\s0-9,.!?@()"\']')
 
     # validate name ...
     if len(n) > 40:
@@ -114,8 +114,10 @@ def validateInfo(n, em, m):
     # Validate message ...
     if len(m) > 250:
         return False, "Invalid message: Limit of 250 characters"
-    if re.search(messagePattern, m) or ".exe" in m:
-        return False, "Invalid message: Illegal characters found"
+    if re.search(messagePattern, m):
+        return False, "Invalid message: Common punctuation only"
+    if  ".exe" in m:
+        return False, "Invalid message: Please remove '.exe'"
     
     return True, "none" # User information is valid
     
