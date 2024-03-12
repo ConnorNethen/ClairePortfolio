@@ -4,7 +4,7 @@
 }
 
 .header-section{
-    padding-bottom: 7.5%;
+    padding-bottom: 9%;
     text-align: center;
     font-size: 17px;
 }
@@ -19,7 +19,7 @@
     max-width: 100%;
     max-height: 100vh;
     margin: 0 auto;
-    padding: 3.5%;
+    padding: 2.5%;
     padding-bottom: 2.5%;
     display: flex;
 }
@@ -27,10 +27,8 @@
 .left-column, .right-column {
     flex: 1; /* This makes both columns take up equal space */
     display: flex;
-}
 
-.left-column {
-    justify-content: left;
+    justify-content: center;
     align-items: center;
 }
 
@@ -38,20 +36,18 @@
     display: flex;
     flex-direction: column; /* Stack children vertically */
 
-    justify-content: center;
-    align-items: center;
     max-width: 50%;
 }
 
 .img-contact {
     max-width: 100%;
     height: auto;
-    max-height: 90%;
+    max-height: 100%;
 }
 
 .contact-form {
-    margin-top: 10%;
-    margin-bottom: 7.5%;
+    margin-top: 7.5%;
+    margin-bottom: 10%;
     width: 80%;
 }
 
@@ -59,6 +55,15 @@
     position: relative;
     display: flex;
     align-items: center;
+    margin-bottom: 2%;
+}
+
+.message-input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-top: 2%;
+    margin-bottom: 2%;
 }
 
 input, textarea {
@@ -67,18 +72,14 @@ input, textarea {
     box-sizing: border-box;
     font-size: 20px;
     text-indent: 1%;
-}
-
-input {
     height: auto;
     min-height: 50px;
 }
 
 textarea {
-    height: auto;
-    min-height: fit-content;
     min-width: 100%;
-    max-height: 200%;
+    max-height: 200px;
+    resize: vertical;
 }
 
 button {
@@ -95,7 +96,6 @@ button {
     border-radius: 8px;
     display: block;
     margin: 0 auto;
-
     margin-top: 2.5%;
 }
 
@@ -110,8 +110,7 @@ button {
     left: 50%;
     transform: translateX(-50%);
     bottom: -110%;
-
-    background-color: rgb(230, 0, 0); /* Default to error color, will be overridden by JS */
+    background-color: rgb(230, 0, 0); /* Default to error color, will be overridden by JavaScript */
     color: #fff;
     text-align: center;
     border-radius: 6px;
