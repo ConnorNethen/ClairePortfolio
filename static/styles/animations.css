@@ -2,7 +2,7 @@
     font-family: Arial, sans-serif;
     background-color: #36454F;
     color: white;
-    padding-top: 5%;
+    padding-top: 6%;
     height: 100%;
     max-width: 100%;
 }
@@ -41,16 +41,9 @@
     height: 90%; /* was auto */
     max-height: 200px; /* Or any other value */
     margin-bottom: 5%; /* Space between image and caption */
-    transition: transform 0.75s;
     justify-content: center;
-
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
 }
-
-.animation-image:hover {
-    transform: scale(1.2); /* Enlarge the image on hover */
-}
-
 
 .animations-captions, .animations-text-box {
     font-family: Arial, sans-serif;
@@ -69,22 +62,27 @@
     font-size: 15px;
 }
 
+/* Min-Width: 1024px */
+@media (min-width: 1024px) {
+    /* Animations for animation images */
+    .animation-image {
+        transition: transform 0.75s;
+    }
+    
+    .animation-image:hover {
+        transform: scale(1.2); /* Enlarge the image on hover */
+    }
+}
+
 /* Larger screen */
 @media (max-width: 1024px) {
     .animations {
         max-height: none;
+        padding-top: 6.5%; /* From 6% */
     }
 
     .h1-animations {
         font-size: 65px;
-    }
-
-    .animation-image {
-        transition: none;
-    }
-
-    .animation-image:hover {
-        transform: none;
     }
 
     .animations-captions {
@@ -99,7 +97,7 @@
 /* Tablet and smaller devices (<=768px) */
 @media (max-width: 768px) {
     .animations {
-        padding-top: 10%;
+        padding-top: 9.5%; /* From 6.5% */
         max-height: none;
     }
 
@@ -109,14 +107,6 @@
 
     .animation-img-container {
         width: 50%; /* 100% of the container width for smaller screens */
-    }
-
-    .animation-image {
-        transition: none;
-    }
-
-    .animation-image:hover {
-        transform: none;
     }
 
     .animations-captions {
@@ -131,20 +121,12 @@
 /* Smartphone and smaller devices (<=480px) */
 @media (max-width: 480px) {
     .animations {
-        padding-top: 12.5%;
+        padding-top: 11%; /* From 9.5% */
         max-height: none;
     }
     
     .h1-animations {
         font-size: 40px; /* Smaller font size for very small screens */
-    }
-
-    .animation-image {
-        transition: none;
-    }
-
-    .animation-image:hover {
-        transform: none;
     }
 
     .animations-captions {

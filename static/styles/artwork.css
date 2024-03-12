@@ -8,7 +8,7 @@
     max-width: 100%;
     height: auto;
     margin: 0 auto;
-    padding-top: 1.5%;
+    padding-top: 3%;
     padding-bottom: 5%;
     background-color: #A7C7E7;
     display: flex;
@@ -20,16 +20,14 @@
 .artwork-images {
     flex: 1; /* Adjust the flex value to control the size */
     width: auto; /* Adjusted to manage the overall width of the image section */
-    max-width: 100%;
+    max-width: 70%;
     display: flex;
     flex-direction: row; /* Keep images in a row that wraps */
     flex-wrap: wrap;
     justify-content: center; /* Center images within the container */
     align-items: center;
-
     column-width: 225px; /* Adjust this value as needed */
     column-gap: 1em;
-    max-width: 60%;
     display: block; /* Change to block display for column-width to work */
 }
 
@@ -45,12 +43,8 @@
     width: 100%; /* Full width of the column */
     height: auto;
     display: block;
-    transition: transform 0.5s, opacity 1s;
-}
 
-.artwork-image:hover {
-    transform: scale(1.05); /* Enlarge the image on hover */
-    opacity: 0.7;
+    border: 1px solid black; /* MAY REMOVE LATER!!!! */
 }
 
 .artwork-description {
@@ -84,8 +78,29 @@
     width: 90%;
 }
 
+/* Min-Width: 1024px */
+@media (min-width: 1024px) {
+    /* Animations for artwork images */
+    .artwork-image {
+        transition: transform 0.5s, opacity 1s;
+    }
+    
+    .artwork-image:hover {
+        transform: scale(1.05); /* Enlarge the image on hover */
+        opacity: 0.7;
+    }
+}
+  
 /* Larger screen */
 @media (max-width: 1024px) {
+    .container-artwork {
+        padding-top: 3.5%; /* From 3% */
+    }
+
+    .artwork-images {
+        max-width: 80%;
+    }
+
     .h1-artwork {
         font-size: 55px;
     }
@@ -93,19 +108,14 @@
     .paragraph-artwork {
         font-size: 16px;
     }
-
-    .artwork-image {
-        transition: none, none;
-    }
-    
-    .artwork-image:hover {
-        transform: none;
-        opacity: 1;
-    }
 }
 
 /* Tablet and smaller devices (<=768px) */
 @media (max-width: 768px) {
+    .container-artwork {
+        padding-top: 6.5%; /* From 3.5% */
+    }
+
     .h1-artwork {
         font-size: 40px;
     }
@@ -113,33 +123,19 @@
     .paragraph-artwork {
         font-size: 14px;
     }
-
-    .artwork-image {
-        transition: none, none;
-    }
-    
-    .artwork-image:hover {
-        transform: none;
-        opacity: 1;
-    }
 }
 
 /* Smartphone and smaller devices (<=480px) */
 @media (max-width: 480px) {
+    .container-artwork {
+        padding-top: 11%; /* From 6.5% */
+    }
+
     .h1-artwork {
         font-size: 30px;
     }
 
     .paragraph-artwork {
         font-size: 12px;
-    }
-
-    .artwork-image {
-        transition: none, none;
-    }
-    
-    .artwork-image:hover {
-        transform: none;
-        opacity: 1;
     }
 }
