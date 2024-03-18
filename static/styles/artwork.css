@@ -85,8 +85,8 @@
     z-index: 1030; /* Sit on top of everything else on the page */
     left: 0;
     top: 0;
-    width: 100vw; /* Full width */
-    height: 100vh; /* Full height */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
     background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
     align-items: center;
     justify-content: center;
@@ -98,6 +98,7 @@
     flex-direction: column;
     align-items: center; /* Center children horizontally */
     justify-content: center; /* Center children vertically */
+    padding-top: 3%;
 }
   
 /* Modal Content (image) */
@@ -113,7 +114,7 @@
     text-align: center;
     color: #ccc;
     max-width: 70%;
-    padding: 2.5%;
+    padding: 1.5%;
 }
 
 /* The Close Button */
@@ -127,13 +128,6 @@
     transition: 0.3s;
 }
 
-.close:hover,
-.close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-}
-
 
 
 
@@ -143,12 +137,20 @@
 @media (min-width: 1024px) {
     /* Animations for artwork images */
     .artwork-image {
-        transition: transform 0.5s, opacity 1s;
+        transition: transform 0.5s, box-shadow 0.5s;
     }
     
     .artwork-image:hover {
-        transform: scale(1.05); /* Enlarge the image on hover */
-        opacity: 0.7;
+        transform: scale(1.025); /* Enlarge the image on hover */
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25), 0 6px 20px 0 rgba(0, 0, 0, 0.25); /* Add shadow behind image for 3D effect*/
+    }
+
+    /* Modal close button hover and focus animation */
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
     }
 }
   
