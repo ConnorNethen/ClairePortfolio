@@ -18,16 +18,10 @@
 }
 
 .artwork-images {
-    flex: 1; /* Adjust the flex value to control the size */
     width: auto; /* Adjusted to manage the overall width of the image section */
     max-width: 70%;
-    display: flex;
-    flex-direction: row; /* Keep images in a row that wraps */
-    flex-wrap: wrap;
-    justify-content: center; /* Center images within the container */
-    align-items: center;
     column-width: 300px; /* From 225px (CHANGE PER SCREEN SIZE?) */
-    column-gap: 1em;
+    column-gap: 1em; /* MAY NOT NEED */
     display: block; /* Change to block display for column-width to work */
 }
 
@@ -77,6 +71,73 @@
     text-align: center;
     width: 90%;
 }
+
+
+
+
+
+
+/* MODAL */
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1030; /* Sit on top of everything else on the page */
+    left: 0;
+    top: 0;
+    width: 100vw; /* Full width */
+    height: 100vh; /* Full height */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Modal Wrapper */
+.modal-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center children horizontally */
+    justify-content: center; /* Center children vertically */
+}
+  
+/* Modal Content (image) */
+.modal-content {
+    width: auto;
+    max-width: 90vw;
+    height: auto;
+    max-height: 90vh;
+}
+
+/* Caption of Modal Image */
+#caption {
+    text-align: center;
+    color: #ccc;
+    max-width: 70%;
+    padding: 2.5%;
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+
+
 
 /* Min-Width: 1024px */
 @media (min-width: 1024px) {

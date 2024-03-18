@@ -93,51 +93,60 @@
             </div>
             <div class="artwork-images">
                 <div class="artwork-img-container">
-                    <a target="_blank">
+                    <a href="javascript:void(0);" onclick="openModal(this);">
                         <img src="{{ url_for('static', filename='assets/images/Sting_Wrays.jpg')}}" alt="Sting Wrays" class="artwork-image">
                     </a>
                 </div>
                 <div class="artwork-img-container">
-                    <a target="_blank">
+                    <a href="javascript:void(0);" onclick="openModal(this);">
                         <img src="{{ url_for('static', filename='assets/images/Kitchen.jpg')}}" alt="Kitchen Picture" class="artwork-image">
                     </a>
                 </div>
                 <div class="artwork-img-container">
-                    <a target="_blank">
+                    <a href="javascript:void(0);" onclick="openModal(this);">
                         <img src="{{ url_for('static', filename='assets/images/Home_garden.jpg')}}" alt="Home Garden" class="artwork-image">
                     </a>
                 </div>
                 <div class="artwork-img-container">
-                    <a target="_blank">
+                    <a href="javascript:void(0);" onclick="openModal(this);">
                         <img src="{{ url_for('static', filename='assets/images/Parked_car.jpg')}}" alt="Parked Car" class="artwork-image">
                     </a>
                 </div>
                 <div class="artwork-img-container">
-                    <a target="_blank">
+                    <a href="javascript:void(0);" onclick="openModal(this);">
                         <img src="{{ url_for('static', filename='assets/images/Untitled_Artwork.jpg')}}" alt="Untitled Artwork" class="artwork-image">
                     </a>
                 </div>
                 <div class="artwork-img-container">
-                    <a target="_blank">
+                    <a href="javascript:void(0);" onclick="openModal(this);">
                         <img src="{{ url_for('static', filename='assets/images/Turtle_Water.jpg')}}" alt="Turtle Water" class="artwork-image">
                     </a>
                 </div>
                 <div class="artwork-img-container">
-                    <a target="_blank">
+                    <a href="javascript:void(0);" onclick="openModal(this);">
                         <img src="{{ url_for('static', filename='assets/images/Home_window.jpg')}}" alt="Home Window" class="artwork-image">
                     </a>
                 </div>
                 <div class="artwork-img-container">
-                    <a target="_blank">
+                    <a href="javascript:void(0);" onclick="openModal(this);">
                         <img src="{{ url_for('static', filename='assets/images/black_white_1.jpg')}}" alt="Black and White 1" class="artwork-image">
                     </a>
                 </div>
                 <div class="artwork-img-container">
-                    <a target="_blank">
+                    <a href="javascript:void(0);" onclick="openModal(this);">
                         <img src="{{ url_for('static', filename='assets/images/black_white_2.jpg')}}" alt="Black and White 2" class="artwork-image">
                     </a>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- Modal/Lightbox For Artwork Images -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <div class="modal-content-wrapper">
+            <img class="modal-content" id="img01">
+            <div id="caption"></div>
         </div>
     </div>
 
@@ -273,6 +282,7 @@
     
     <script src="{{ url_for('static', filename='/javascript/navigationbar.js') }}"></script>
     <script src="{{ url_for('static', filename='/javascript/carousel.js') }}"></script>
+    <script src="{{ url_for('static', filename='/javascript/artwork.js') }}"></script>
     <script src="{{ url_for('static', filename='/javascript/contact.js') }}"></script>
 </body>
 </html>
