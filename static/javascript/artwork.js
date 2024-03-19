@@ -1,44 +1,66 @@
 document.addEventListener('DOMContentLoaded', function () {
-
     var imgContainers = document.getElementsByClassName('artwork-img-container');
+    var images = Array.from(imgContainers).map(function(container, index) {
+        var img = container.getElementsByTagName('img')[0];
+        return { src: img.src, alt: img.alt, index: index };
+    });
 
-    for (var i = 0; i < imgContainers.length; i++) {
-      imgContainers[i].addEventListener('click', function () {
-        openModal(this);
-      });
-    }
-
+    var currentIndex = 0; // Start with the first image
+    var totalImages = images.length;
     var modal = document.getElementById('imageModal');
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    var numberText = document.getElementsByClassName("numberText")[0];
+    var prevButton = document.querySelector('.prevSlide'); // Use querySelector for single element
+    var nextButton = document.querySelector('.nextSlide'); // Use querySelector for single element
 
-    // Function to open the modal
-    function openModal(imgContainer) {
-        var img = imgContainer.getElementsByTagName('img')[0];
-        var modalImg = document.getElementById("img01");
-        var captionText = document.getElementById("caption");
+
+    // Function to open the modal with a specific image
+    function openModal(index) {
+        var image = images[index];
+        modalImg.src = image.src;
+        captionText.textContent = image.alt;
+        numberText.textContent = (index+1) + ' / ' + totalImages;
         modal.style.display = "flex";
-        modalImg.src = img.src;
-        captionText.innerHTML = img.alt;
         document.body.style.overflow = 'hidden'; // Disable scrolling
+        currentIndex = index; // Update current index
     }
 
-    var span = document.getElementsByClassName("close")[0];
+    // Event listeners for prev and next buttons
+    prevButton.addEventListener('click', function(event) {
+        event.stopPropagation(); // Prevent modal from closing
+        currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+        openModal(currentIndex);
+    });
 
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function(event) { 
+    nextButton.addEventListener('click', function(event) {
+        event.stopPropagation(); // Prevent modal from closing
+        currentIndex = (currentIndex + 1) % totalImages;
+        openModal(currentIndex);
+    });
+
+    // Setting up click event for each image container
+    images.forEach(function(image, index) {
+        imgContainers[index].addEventListener('click', function() {
+            openModal(index);
+        });
+    });
+
+    // Close modal functionality
+    var span = document.getElementsByClassName("close")[0];
+    span.onclick = function(event) {
         modal.style.display = "none";
         document.body.style.overflow = 'visible'; // Re-enable scrolling
-        event.stopPropagation(); // Prevent click from closing modal again
-    }
+        event.stopPropagation(); // Prevent modal from closing again
+    };
 
-    // Prevent closing modal when clicking on the image or caption
-    document.querySelector('.modal-content-wrapper').addEventListener('click', function(event) {
-        event.stopPropagation(); // This stops the click from reaching the modal background
-    });
-
-    // Close the modal if the user clicks anywhere outside of the modal content
     modal.addEventListener('click', function() {
         this.style.display = "none";
-        document.body.style.overflow = 'visible'; // Re-enable scrolling
+        document.body.style.overflow = 'visible';
     });
 
+    // Prevent closing modal when clicking on the modal content wrapper
+    document.querySelector('.modal-content-wrapper').addEventListener('click', function(event) {
+        event.stopPropagation();
+    });
 });

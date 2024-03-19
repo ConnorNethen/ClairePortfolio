@@ -128,6 +128,37 @@
     transition: 0.3s;
 }
 
+/* Slide Counter */
+.numberText {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+
+
+
+.prevSlide, .nextSlide {
+    background-color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+}
+
+/* PrevSlide Button Class */
+.prevSlide {
+  left: 0;
+  margin-left: 2.5%;
+}
+  
+/* NextSlide Button Class */
+.nextSlide {
+    right: 0;
+    margin-right: 2.5%;
+}
 
 
 
