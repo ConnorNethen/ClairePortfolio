@@ -200,7 +200,7 @@
     }
 
     .artwork-images {
-        max-width: 80%;
+        max-width: 80%; /* From 70% */
     }
 
     .h1-artwork {
@@ -249,6 +249,11 @@
 
     .paragraph-artwork {
         font-size: 14px;
+    }
+
+    .artwork-images {
+        max-width: 85%; /* From 80% */
+        column-width: 200px; /* From 300px */
     }
 
     /* Modal Content (image) */

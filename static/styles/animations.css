@@ -39,7 +39,7 @@
 .animation-image {
     width: 90%; /* Adjust width to be fully responsive within the container */
     height: 90%; /* was auto */
-    max-height: 200px; /* Or any other value */
+    max-height: 250px; /* Or any other value */
     margin-bottom: 5%; /* Space between image and caption */
     justify-content: center;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
@@ -70,7 +70,7 @@
     }
     
     .animation-image:hover {
-        transform: scale(1.2); /* Enlarge the image on hover */
+        transform: scale(1.1); /* Enlarge the image on hover */
     }
 }
 
