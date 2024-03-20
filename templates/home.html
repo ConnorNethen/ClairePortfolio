@@ -146,8 +146,8 @@
         <div class="numberText"></div>
         <span class="close">&times;</span>
         <!-- Modal Buttons -->
-        <a class="prevSlide" onclick="prevImage()">Prev</a>
-        <a class="nextSlide" onclick="nextImage()">Next</a>
+        <a class="prevSlide" onclick="prevImage()"><img src="{{ url_for('static', filename='assets/Icons/modal_left_arrow.png')}}"></a>
+        <a class="nextSlide" onclick="nextImage()"><img src="{{ url_for('static', filename='assets/Icons/modal_right_arrow.png')}}"></a>
         <div class="modal-content-wrapper">
             <img class="modal-content" id="img01">
             <div id="caption"></div>

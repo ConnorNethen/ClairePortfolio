@@ -11,6 +11,7 @@
 /* Carousel Class */
 .carousel {
     display: flex;
+    height: 100vh; /* MAY CHANGE LATER */
     transition: transform 1s ease-in-out; /* Transition effect for duration of slide change */
 }
 

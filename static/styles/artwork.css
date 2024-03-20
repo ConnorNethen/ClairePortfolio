@@ -120,10 +120,10 @@
 /* The Close Button */
 .close {
     position: absolute;
-    top: 5%;
-    right: 5%;
+    top: 40px;
+    right: 30px;
     color: #f1f1f1;
-    font-size: 40px;
+    font-size: 55px;
     font-weight: bold;
     transition: 0.3s;
 }
@@ -131,10 +131,10 @@
 /* Slide Counter */
 .numberText {
     position: absolute;
-    top: 5%;
-    left: 5%;
+    top: 50px;
+    left: 30px;
     color: #f1f1f1;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
 }
 
@@ -145,19 +145,27 @@
     background-color: white;
     cursor: pointer;
     position: absolute;
+    background-color: transparent;
     top: 50%;
+    width: 40px;
+    height: 40px;
 }
 
 /* PrevSlide Button Class */
 .prevSlide {
   left: 0;
-  margin-left: 2.5%;
+  margin-left: 1.5%;
 }
   
 /* NextSlide Button Class */
 .nextSlide {
     right: 0;
-    margin-right: 2.5%;
+    margin-right: 1.5%;
+}
+
+.prevSlide img, .nextSlide img {
+    width: 40px;
+    height: 40px;
 }
 
 
@@ -202,6 +210,31 @@
     .paragraph-artwork {
         font-size: 16px;
     }
+
+    /* Modal Content (image) */
+    .modal-content {
+        max-width: 87vw; /* From 90vw */
+    }
+
+    /* The Close Button */
+    .close {
+        font-size: 45px; /* From 55px */
+    }
+
+    /* Slide Counter */
+    .numberText {
+        font-size: 25px; /* From 30px */
+    }
+
+    .prevSlide, .nextSlide {
+        width: 35px; /* From 40px */
+        height: 35px; /* From 40px */
+    }
+
+    .prevSlide img, .nextSlide img {
+        width: 35px; /* From 40px */
+        height: 35px; /* From 40px */
+    }
 }
 
 /* Tablet and smaller devices (<=768px) */
@@ -217,6 +250,31 @@
     .paragraph-artwork {
         font-size: 14px;
     }
+
+    /* Modal Content (image) */
+    .modal-content {
+        max-width: 85vw; /* From 87vw */
+    }
+
+    /* The Close Button */
+    .close {
+        font-size: 40px; /* From 45px */
+    }
+
+    /* Slide Counter */
+    .numberText {
+        font-size: 22px; /* From 25px */
+    }
+
+    .prevSlide, .nextSlide {
+        width: 30px; /* From 35px */
+        height: 30px; /* From 35px */
+    }
+
+    .prevSlide img, .nextSlide img {
+        width: 30px; /* From 35px */
+        height: 30px; /* From 35px */
+    }
 }
 
 /* Smartphone and smaller devices (<=480px) */
@@ -231,5 +289,23 @@
 
     .paragraph-artwork {
         font-size: 12px;
+    }
+
+    .prevSlide {
+        margin-left: 5px;
+    }
+
+    .nextSlide {
+        margin-right: 5px;
+    }
+
+    .prevSlide, .nextSlide {
+        width: 25px; /* From 30px */
+        height: 25px; /* From 30px */
+    }
+
+    .prevSlide img, .nextSlide img {
+        width: 25px; /* From 30px */
+        height: 25px; /* From 30px */
     }
 }
