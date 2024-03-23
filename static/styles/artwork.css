@@ -48,28 +48,17 @@
     flex-direction: column;
     justify-content: center; /* Center the content vertically */
     align-items: center; /* Center the content horizontally */
-    padding-top: 2%; /* Adjust padding as needed */
-    margin: 1% 1%; /* Add margin to the left and right */
+    padding-top: 2.5%;
+    margin-top: 0.5%;
+    margin-bottom: 2%;
 }
 
-.h1-artwork, .paragraph-artwork {
-    margin-bottom: 1%; /* Add some bottom margin for spacing */
-    text-align: center;
-}
 
 .h1-artwork {
     text-align: center;
     padding: 0px;
     margin: 0px;
     font-size: 75px;
-}
-
-.paragraph-artwork {
-    font-family: Arial, sans-serif;
-    font-size: 18px;
-    color: black;
-    text-align: center;
-    width: 90%;
 }
 
 
@@ -297,7 +286,7 @@
 /* Smartphone and smaller devices (<=480px) */
 @media (max-width: 480px) {
     .container-artwork {
-        padding-top: 11%; /* From 6.5% */
+        padding-top: 8%; /* From 6.5% */
     }
 
     .h1-artwork {

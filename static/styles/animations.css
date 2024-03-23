@@ -13,10 +13,6 @@
     margin: 0 0; /* Play with */
 }
 
-.animation-summary {
-    text-align: center;
-}
-
 .animation-images {
     display: flex;
     padding: 1%; /* Add padding for spacing */
