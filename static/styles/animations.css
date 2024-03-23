@@ -5,6 +5,8 @@
     padding-top: 6%;
     height: 100%;
     max-width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .h1-animations {
@@ -15,30 +17,23 @@
 
 .animation-images {
     display: flex;
-    padding: 1%; /* Add padding for spacing */
+    padding: 0.5%; /* Add padding for spacing */
     flex-wrap: wrap; /* Wrap images to the next line if they don't fit horizontally */
     justify-content: space-between; /* Distribute images evenly on the line */
 }
 
 .animation-img-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 2.5%;
-    padding-bottom: 1%;
-    width: 25%; /* Adjust based on padding */
+    flex-basis: 45%; /* Each container will take up roughly 45% of the row width */
+    margin: 2%; /* Add some margin between containers */
     box-sizing: border-box;
     text-align: center; /* Center text */
-    margin: 0 auto; /* Center the container itself if needed */
 }
 
 .animation-image {
-    width: 90%; /* Adjust width to be fully responsive within the container */
-    height: 90%; /* was auto */
-    max-height: 250px; /* Or any other value */
-    margin-bottom: 5%; /* Space between image and caption */
-    justify-content: center;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+    width: 100%; /* Make image take up full container width */
+    object-fit: cover; /* may not need */
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2); 
+    display: block; /* Display block to remove bottom space */
 }
 
 .animations-captions, .animations-text-box {
@@ -49,24 +44,53 @@
 }
 
 .animations-captions {
-    margin: 1% 0;
+    margin: 2.5% 0;
     font-size: 30px;
     font-style: italic;
+    text-decoration: underline;
 }
 
-.animations-text-box {
-    font-size: 15px;
+.image-overlay-wrapper {
+    position: relative;
+    transition: transform 0.75s; /* Smooth transition for scaling */
+    cursor: pointer; /* Optional: Changes the cursor on hover */
 }
+
+.overlay-text-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    width: auto;
+    padding: 5px;
+    box-sizing: border-box;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.75s ease-in-out; /* Include transform for consistent scaling */
+    z-index: 2; /* Make sure text box is above image */
+
+    background: rgba(0, 0, 0, 0.2); /* Possibly remove */
+}
+
+
 
 /* Min-Width: 1024px */
 @media (min-width: 1024px) {
     /* Animations for animation images */
     .animation-image {
-        transition: transform 0.75s;
+        transition: transform 0.75s, opacity 0.75s, filter 0.75s; /* MAY REMOVE FILTER */
+    }
+
+    .image-overlay-wrapper:hover .overlay-text-box {
+        opacity: 1; /* Show the text box */
     }
     
-    .animation-image:hover {
-        transform: scale(1.1); /* Enlarge the image on hover */
+    .image-overlay-wrapper:hover .animation-image {
+        transform: scale(1.05); /* Scale the image */
+        opacity: 0.8; /* Semi-transparent when hover */
+        filter: blur(2px); /* MAY REMOVE */
+        -webkit-filter: blur(2px); /* MAY REMOVE */
     }
 }
 
@@ -87,6 +111,26 @@
     
     .animations-text-box {
         font-size: 13px;
+    }
+
+
+
+
+    .image-overlay-wrapper .overlay-text-box {
+        transition: opacity 0.75s ease-in-out; /* Smooth transition for the text box */
+    }
+    
+    .image-overlay-wrapper .animation-image {
+        transition: transform 0.75s ease-in-out; /* Smooth transition for the image */
+    }
+
+    .show-overlay .overlay-text-box {
+        opacity: 1; /* Show the text box */
+    }
+    
+    .show-overlay .animation-image {
+        transform: scale(1.05); /* Scale the image */
+        opacity: 0.8; /* Semi-transparent when hover */
     }
 }
 
