@@ -98,7 +98,9 @@
     flex-direction: column;
     align-items: center; /* Center children horizontally */
     justify-content: center; /* Center children vertically */
-    padding-top: 3%;
+    padding-top: 5px;
+    margin-top: 1%;
+    max-height: 100vh;
 }
   
 /* Modal Content (image) */
@@ -107,15 +109,25 @@
     max-width: 90vw;
     height: auto;
     max-height: 90vh;
+    overflow-y: auto;
 }
 
 /* Caption of Modal Image */
 #caption {
     text-align: center;
-    color: #ccc;
+    color: #dbdbdb;
     max-width: 70%;
-    padding: 1.5%;
+    padding-top: 5px;
 }
+
+#medium {
+    text-align: center;
+    color: #dbdbdb;
+    max-width: 70%;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
 
 /* The Close Button */
 .close {
@@ -146,7 +158,7 @@
     cursor: pointer;
     position: absolute;
     background-color: transparent;
-    top: 50%;
+    top: 45%;
     width: 40px;
     height: 40px;
 }

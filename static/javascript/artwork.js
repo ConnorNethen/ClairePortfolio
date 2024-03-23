@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var modal = document.getElementById('imageModal');
     var modalImg = document.getElementById("img01");
     var captionText = document.getElementById("caption");
+    var mediumText = document.getElementById("medium");
     var numberText = document.getElementsByClassName("numberText")[0];
     var prevButton = document.querySelector('.prevSlide'); // Use querySelector for single element
     var nextButton = document.querySelector('.nextSlide'); // Use querySelector for single element
@@ -19,11 +20,19 @@ document.addEventListener('DOMContentLoaded', function () {
     function openModal(index) {
         var image = images[index];
         modalImg.src = image.src;
-        captionText.textContent = image.alt;
+        let [capt, medi] = parseText(image.alt);
+        captionText.textContent = capt;
+        mediumText.textContent = medi;
         numberText.textContent = (index+1) + ' / ' + totalImages;
         modal.style.display = "flex";
         document.body.style.overflow = 'hidden'; // Disable scrolling
         currentIndex = index; // Update current index
+    }
+
+    // Function to parse the alt text from the image
+    function parseText(text) {
+        let index = text.indexOf("/");
+        return [text.slice(0,index), text.slice(index+1, text.length)];
     }
 
     // Event listeners for prev and next buttons
