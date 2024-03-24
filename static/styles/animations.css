@@ -71,6 +71,7 @@
     z-index: 2; /* Make sure text box is above image */
 
     background: rgba(0, 0, 0, 0.2); /* Possibly remove */
+    font-size: 30px;
 }
 
 
@@ -91,6 +92,24 @@
         opacity: 0.8; /* Semi-transparent when hover */
         filter: blur(2px); /* MAY REMOVE */
         -webkit-filter: blur(2px); /* MAY REMOVE */
+    }
+
+
+    .image-overlay-wrapper .overlay-text-box {
+        transition: opacity 0.75s ease-in-out; /* Smooth transition for the text box */
+    }
+    
+    .image-overlay-wrapper .animation-image {
+        transition: transform 0.75s ease-in-out; /* Smooth transition for the image */
+    }
+
+    .show-overlay .overlay-text-box {
+        opacity: 1; /* Show the text box */
+    }
+    
+    .show-overlay .animation-image {
+        transform: scale(1.05); /* Scale the image */
+        opacity: 0.8; /* Semi-transparent when hover */
     }
 }
 
@@ -115,6 +134,10 @@
 
 
 
+    .overlay-text-box {
+        font-size: 20px; /* From 30px */
+        width: 70%; /* From auto */
+    }
 
     .image-overlay-wrapper .overlay-text-box {
         transition: opacity 0.75s ease-in-out; /* Smooth transition for the text box */
@@ -156,6 +179,11 @@
     .animations-text-box {
         font-size: 12px;
     }
+
+    .overlay-text-box {
+        font-size: 15px; /* From 20px */
+        width: 85%; /* From 70% */
+    }
 }
 
 /* Smartphone and smaller devices (<=480px) */
@@ -175,5 +203,9 @@
     
     .animations-text-box {
         font-size: 11px;
+    }
+
+    .overlay-text-box {
+        font-size: 11px; /* From 15px */
     }
 }
