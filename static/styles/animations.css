@@ -19,11 +19,11 @@
     display: flex;
     padding: 0.5%; /* Add padding for spacing */
     flex-wrap: wrap; /* Wrap images to the next line if they don't fit horizontally */
-    justify-content: space-between; /* Distribute images evenly on the line */
+    justify-content: space-evenly;
 }
 
 .animation-img-container {
-    flex-basis: 45%; /* Each container will take up roughly 45% of the row width */
+    flex-basis: 29%; /* Each container will take up roughly 29% of the row width */
     margin: 2%; /* Add some margin between containers */
     box-sizing: border-box;
     text-align: center; /* Center text */
@@ -62,8 +62,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fff;
-    width: auto;
-    padding: 5px;
+    width: 80%;
+    padding: 4px;
     box-sizing: border-box;
     text-align: center;
     opacity: 0;
@@ -71,18 +71,29 @@
     z-index: 2; /* Make sure text box is above image */
 
     background: rgba(0, 0, 0, 0.2); /* Possibly remove */
-    font-size: 30px;
 }
 
+
+/* Min-Width: 1500px */
+@media (min-Width: 1500px) {
+    /* Font size of text box for screens larger than 1500px */
+    .overlay-text-box {
+        font-size: 26px;
+    }
+}
+
+/* Max-Width: 1500px */
+@media (max-Width: 1500px) {
+    /* Font size of text box for screens smaller than 1500px */
+    .overlay-text-box {
+        font-size: 22px; /* From 26px */
+    }
+}
 
 
 /* Min-Width: 1024px */
 @media (min-width: 1024px) {
-    /* Animations for animation images */
-    .animation-image {
-        transition: transform 0.75s, opacity 0.75s, filter 0.75s; /* MAY REMOVE FILTER */
-    }
-
+    /* Animation for showing image overlay (on hover) */
     .image-overlay-wrapper:hover .overlay-text-box {
         opacity: 1; /* Show the text box */
     }
@@ -90,19 +101,20 @@
     .image-overlay-wrapper:hover .animation-image {
         transform: scale(1.05); /* Scale the image */
         opacity: 0.8; /* Semi-transparent when hover */
-        filter: blur(2px); /* MAY REMOVE */
-        -webkit-filter: blur(2px); /* MAY REMOVE */
+        filter: blur(2px);
+        -webkit-filter: blur(2px);
     }
 
-
+    /* Animation for showing image overlay */
     .image-overlay-wrapper .overlay-text-box {
         transition: opacity 0.75s ease-in-out; /* Smooth transition for the text box */
     }
     
     .image-overlay-wrapper .animation-image {
-        transition: transform 0.75s ease-in-out; /* Smooth transition for the image */
+        transition: transform 0.75s ease-in-out, opacity 0.75s, filter 0.75s ease-in-out; /* Smooth transition for the image */
     }
 
+    /* Show Overlay class */
     .show-overlay .overlay-text-box {
         opacity: 1; /* Show the text box */
     }
@@ -110,6 +122,8 @@
     .show-overlay .animation-image {
         transform: scale(1.05); /* Scale the image */
         opacity: 0.8; /* Semi-transparent when hover */
+        filter: blur(2px);
+        -webkit-filter: blur(2px);
     }
 }
 
@@ -132,21 +146,21 @@
         font-size: 13px;
     }
 
-
-
     .overlay-text-box {
-        font-size: 20px; /* From 30px */
+        font-size: 17px; /* From 22px */
         width: 70%; /* From auto */
     }
 
+    /* Animation for showing image overlay */
     .image-overlay-wrapper .overlay-text-box {
         transition: opacity 0.75s ease-in-out; /* Smooth transition for the text box */
     }
     
     .image-overlay-wrapper .animation-image {
-        transition: transform 0.75s ease-in-out; /* Smooth transition for the image */
+        transition: transform 0.75s ease-in-out, opacity 0.75s, filter 0.75s ease-in-out; /* Smooth transition for the image */
     }
 
+    /* Show Overlay class */
     .show-overlay .overlay-text-box {
         opacity: 1; /* Show the text box */
     }
@@ -154,6 +168,8 @@
     .show-overlay .animation-image {
         transform: scale(1.05); /* Scale the image */
         opacity: 0.8; /* Semi-transparent when hover */
+        filter: blur(2px);
+        -webkit-filter: blur(2px);
     }
 }
 
@@ -169,7 +185,7 @@
     }
 
     .animation-img-container {
-        width: 50%; /* 100% of the container width for smaller screens */
+        flex-basis: 45%; /* From 29% */
     }
 
     .animations-captions {
@@ -181,7 +197,7 @@
     }
 
     .overlay-text-box {
-        font-size: 15px; /* From 20px */
+        font-size: 13px; /* From 17px */
         width: 85%; /* From 70% */
     }
 }
@@ -206,6 +222,6 @@
     }
 
     .overlay-text-box {
-        font-size: 11px; /* From 15px */
+        font-size: 10px; /* From 13px */
     }
 }
