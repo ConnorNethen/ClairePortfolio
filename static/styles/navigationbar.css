@@ -219,3 +219,35 @@
         width: 18px; /* from 21px */
     }
 }
+
+/* Max-Width: 300px */
+@media (max-width: 300px) {
+    /* Navbar Brand Resizing */
+    .navbar-brand {
+        font-size: 15px; /* from 19px */
+    }
+
+    /* Nav Link Resizing */
+    .nav-link {
+        font-size: 9px; /* from 11px */
+    }
+
+    /* Nav Items Margin Change */
+    .nav-items {
+        margin-right: 8.5%; /* from 9% */
+    }
+
+    /* Navbar Toggler Resizing */
+    .navbar-toggler {
+        height: 32px; /* from 35px */
+        width: 32px; /* from 35px */
+        min-height: 32px; /* from 35px */
+        min-width: 32px; /* from 35px */
+    }
+
+    /* Toggler Image Resizing */
+    .toggler-img {
+        height: 16px; /* from 18px */
+        width: 16px; /* from 18px */
+    }
+}
