@@ -70,7 +70,7 @@ def send_email():
     user_id = request.remote_addr  # Use client IP as a simple identifier
     allowed, waitTime = can_send_email(user_id)
     if not allowed: # User has already sent more than allowed number of emails in 2 minutes, deny email
-        return jsonify({'error':'Rate limit exceeded. Please wait ' + str(waitTime) + ' seconds before sending another email.'}), 429
+        return jsonify({'error':'Rate limit exceeded. Please wait ' + str(waitTime) + ' seconds.'}), 429
 
     data = request.json
     # Just in case (may be redundant) ...
