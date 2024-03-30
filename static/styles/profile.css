@@ -1,11 +1,9 @@
 .profile {
     font-family: Arial, sans-serif;
     background-color: #CBC3E3;
-    margin: 0;
-    padding: 0;
     max-width: 100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     background-image: var(--background-image-1);
     background-attachment: fixed;
@@ -14,8 +12,7 @@
 }
 
 .container-profile {
-    display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     width: 100%;
 }
@@ -24,54 +21,66 @@
     background-color: #CBC3E3;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 84%;
     margin: 1.5% auto;
-    flex-direction: row;
-
-    margin-left: 5%;
-    margin-right: 40%;
-    min-width: 0;
-
     padding: 1%;
     border-radius: 5px;
 }
 
-.profile-image {
-    width: 60%;
-    min-width: 45%;
-    height: auto;
-    margin-left: 0;
-
-    max-width: 100%;
-}
-
-.about-me {
-    flex-grow: 1;
+.about-me, .artist-statement {
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 1.4;
     margin-left: 2%;
     margin-right: 2%;
-    padding: 0%;
     word-wrap: break-word;
     overflow-wrap: break-word;
 }
 
-.h1-profile {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-
-    font-size: 3rem;
-    word-wrap: break-word;
+.about-me {
+    flex-basis: 20%;
 }
 
-.profile-description {
+.artist-statement {
+    flex-basis: 30%;
+}
+
+.about-header1 {
+    margin: 2.5% 0;
+    text-align: center;
+    font-size: 2.2rem;
+}
+
+.about-description {
     text-align: center;
     padding: 0;
     margin: 0;
 }
+
+.portrait-container {
+    display: flex; /* Use flex to align the child image */
+    justify-content: center; /* Center the child horizontally */
+    align-items: center; /* Center the child vertically */
+    flex-basis: 45%; /* Adjusted flex basis */
+}
+
+.portrait-image {
+    width: auto; /* Adjust width to maintain aspect ratio */
+    height: auto; /* Adjust height to maintain aspect ratio */
+    max-width: 90%; /* Ensure image does not exceed its container */
+    max-height: 90%; /* Ensure image does not exceed its container */
+}
+
+.artist-statement-header2 {
+    width: auto;
+}
+
+.artist-statement-description {
+    width: auto;
+}
+
 
 
 /* Media queries */
@@ -85,10 +94,7 @@
         width: 90%;
     }
 
-    .h1-profile, .about-me {
-        text-align: center;
-        padding: 0 5%; /* Add padding to prevent text from touching the edges */
-    }
+
 }
 
 @media (max-width: 768px) {
@@ -98,9 +104,7 @@
         background-color: #CBC3E3;
     }
 
-    .h1-profile {
-        font-size: 2rem; /* Smaller font size on mobile devices */
-    }
+
     
     .container-profile {
         margin-top: 10%;
@@ -116,16 +120,7 @@
         margin-right: auto;
     }
 
-    .profile-image {
-        width: 85%; /* Adjust image width on smaller screens */
-        margin: 0 auto; /* Center the image */
-    }
 
-    .about-me {
-        font-size: 1rem; /* Smaller font size for mobile */
-        margin-left: 5%;
-        margin-right: 5%;
-    }
 }
 
 @media (max-width: 480px) {
@@ -134,9 +129,6 @@
         background-color: #CBC3E3;
     }
 
-    .h1-profile {
-        font-size: 1.5rem; /* Even smaller font size for very small devices */
-    }
 
     .container-profile {
         margin-top: 10%;
@@ -146,13 +138,6 @@
     }
 
     .profile-content {
-        width: 65%;
-        margin-left: 1%;
-        margin-right: 1%;
-    }
-
-    .about-me {
-        margin-left: 3%;
-        margin-right: 3%;
+        width: 80%;
     }
 }
