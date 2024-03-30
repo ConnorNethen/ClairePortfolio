@@ -1,22 +1,26 @@
+/* Profile Class */
 .profile {
     font-family: Arial, sans-serif;
     background-color: #CBC3E3;
     max-width: 100%;
+    min-height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
     background-image: var(--background-image-1);
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 
+/* Container-Profile Class (contains profile-content) */
 .container-profile {
     justify-content: center;
     align-items: center;
-    width: 100%;
+    margin: 5% 0;
 }
 
+/* Profile-Content Class (contains about-portrait-container & artist-statement) */
 .profile-content {
     background-color: #CBC3E3;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -24,120 +28,229 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 84%;
+    width: 80%;
     margin: 1.5% auto;
-    padding: 1%;
-    border-radius: 5px;
+    padding: 2%;
+    border-radius: 25px;
 }
 
-.about-me, .artist-statement {
-    font-size: 16px;
-    line-height: 1.4;
-    margin-left: 2%;
-    margin-right: 2%;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+/* About-Portrait-Container Class (contains about-me and portrait) */
+.about-portrait-container {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 60%; /* Takes up 60% of profile-content class */ 
+    justify-content: center;
+    align-items: center;
 }
 
+/* About-Me Class */
 .about-me {
-    flex-basis: 20%;
+    flex-basis: 35%; /* Takes up 35% of about-portrait-container class */
 }
 
-.artist-statement {
-    flex-basis: 30%;
+/* Portrait-Container Class (contains portrait image) */
+.portrait-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 65%; /* Takes up 65% of about-portrait-container class */
 }
 
+/* Portrait-Image */
+.portrait-image {
+    width: auto;
+    height: auto;
+    width: 90%;
+}
+
+/* About Header1 (inside about-me) */
 .about-header1 {
     margin: 2.5% 0;
     text-align: center;
-    font-size: 2.2rem;
+    font-size: 28px;
 }
 
+/* About Description (inside about-me) */
 .about-description {
     text-align: center;
-    padding: 0;
-    margin: 0;
+    font-size: 18px;
+    line-height: 1.4;
 }
 
-.portrait-container {
-    display: flex; /* Use flex to align the child image */
-    justify-content: center; /* Center the child horizontally */
-    align-items: center; /* Center the child vertically */
-    flex-basis: 45%; /* Adjusted flex basis */
+/* Artist Statement Class */
+.artist-statement {
+    flex-basis: 40%; /* Takes up 40% of profile-content class */
 }
 
-.portrait-image {
-    width: auto; /* Adjust width to maintain aspect ratio */
-    height: auto; /* Adjust height to maintain aspect ratio */
-    max-width: 90%; /* Ensure image does not exceed its container */
-    max-height: 90%; /* Ensure image does not exceed its container */
-}
-
+/* Artist Statement Header2 (inside artist-statement) */
 .artist-statement-header2 {
-    width: auto;
+    margin: 2.5% 0;
+    text-align: left;
+    font-size: 23px;
 }
 
+/* Artist Statement Description (inside artist-statement) */
 .artist-statement-description {
-    width: auto;
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.4;
 }
 
+/* Max-Width: 1600px */
+@media (max-width: 1600px) {
+    /* About-Portrait-Container Flex Changes */
+    .about-portrait-container {
+        flex-direction: column-reverse;
+        flex-basis: 50%; /* Takes up 50% (from 60%) of profile-content class */
+    }
 
+    /* Artist-Statement Flex Changes & Bordering/Padding Addition */
+    .artist-statement {
+        flex-basis: 50%; /* Takes up 50% (from 40%) of profile-content class */
+        box-shadow: rgba(183, 164, 216, 0.4) -5px 5px, rgba(183, 164, 216, 0.3) -10px 10px, rgba(183, 164, 216, 0.2) -15px 15px, rgba(183, 164, 216, 0.1) -20px 20px, rgba(183, 164, 216, 0.05) -25px 25px; /* Add custom box shadow */
+        border: 2px solid rgba(183, 164, 216, 0.6); /* Add border */
+        padding: 0 5px; /* Add padding */
+    }
 
-/* Media queries */
+    /* About-Me & Artist-Statement Margin Changes */
+    .about-me, .artist-statement {
+        margin-left: 1.5%;
+        margin-right: 1.5%;
+    }
+
+    /* Portrait Image Width Change */
+    .portrait-image {
+        width: 80%; /* From 90% */
+    }
+
+    /* About Header1 (inside about-me) */
+    .about-header1 {
+        font-size: 26px; /* From 28px */
+    }
+
+    /* About Description (inside about-me) */
+    .about-description {
+        font-size: 17px; /* From 18px */
+    }
+
+    /* Artist Statement Header2 (inside artist-statement) */
+    .artist-statement-header2 {
+        font-size: 21px; /* From 23px */
+    }
+
+    /* Artist Statement Description (inside artist-statement) */
+    .artist-statement-description {
+        font-size: 17px; /* From 18px */
+    }
+}
+
+/* Max-Width: 1024px */
 @media (max-width: 1024px) {
+    /* Profile Class */
     .profile {
-        background-image: var(--background-image-2);
+        height: auto; /* Set height to auto (from 80vh) */
+        background-image: var(--background-image-2); /* Changed Background Image */
     }
 
+    /* Profile-Content Flex-Direction Change */
     .profile-content {
-        flex-direction: column; /* Stack earlier if necessary */
-        width: 90%;
+        flex-direction: column; /* From row */
+        width: 65%; /* From 80% */
     }
 
+    /* About-Portrait-Container Flex-Direction Change */
+    .about-portrait-container {
+        flex-direction: column; /* From column-reverse */
+    }
 
+    /* Artist Statement Bordering/Padding Removal */
+    .artist-statement {
+        box-shadow: none; /* Remove custom box shadow */
+        border: none; /* Remove border */
+        padding: none; /* Remove padding */
+    }
+
+    /* About Header1 Font Resizing */
+    .about-header1 {
+        font-size: 25px; /* From 26px */
+    }
+
+    /* About Description Font Resizing */
+    .about-description {
+        font-size: 15px; /* From 17px */
+    }
+
+    /* Artist Statement Header2 Font Resizing */
+    .artist-statement-header2 {
+        font-size: 20px; /* From 21px */
+    }
+
+    /* Artist Statement Description Font Resizing */
+    .artist-statement-description {
+        font-size: 15px; /* From 17px */
+    }
 }
 
 @media (max-width: 768px) {
+    /* Profile Background Image & Color Changes */
     .profile {
-        height: auto; /* Allow the height to grow as needed */
-        background-image: none;
-        background-color: #CBC3E3;
+        background-image: none; /* Remove background image */
+        background-color: #CBC3E3; /* Add background color */
     }
 
-
-    
+    /* Container-Profile Margin Change */
     .container-profile {
-        margin-top: 10%;
-        margin-bottom: 10%;
-        justify-content: center; /* Center the contents on smaller screens */
+        margin: 5.5% 0; /* From 5% 0 */
     }
 
-    .profile-content {
-        flex-direction: column; /* Stack elements vertically on mobile */
-        width: 65%; /* Allow a little margin on the sides */
-        margin: 1.5% auto; /* Adjust margin to keep the content centered */
-        margin-left: auto;
-        margin-right: auto;
+    /* About Header1 Font Resizing */
+    .about-header1 {
+        font-size: 25px; /* From 26px */
     }
 
+    /* About Description Font Resizing */
+    .about-description {
+        font-size: 15px; /* From 17px */
+    }
 
+    /* Artist Statement Header2 Font Resizing */
+    .artist-statement-header2 {
+        font-size: 20px; /* From 21px */
+    }
+
+    /* Artist Statement Description Font Resizing */
+    .artist-statement-description {
+        font-size: 15px; /* From 17px */
+    }
 }
 
 @media (max-width: 480px) {
-    .profile {
-        background-image: none;
-        background-color: #CBC3E3;
-    }
-
-
+    /* Container-Profile Margin Change */
     .container-profile {
-        margin-top: 10%;
-        margin-bottom: 10%;
-        justify-content: center;
-        align-items: center;
+        margin: 9.5% 0; /* From 5.5% 0 */
     }
 
     .profile-content {
-        width: 80%;
+        width: 75%; /* From 65% */
+    }
+
+    /* About Header1 Font Resizing */
+    .about-header1 {
+        font-size: 23px; /* From 25px */
+    }
+
+    /* About Description Font Resizing */
+    .about-description {
+        font-size: 12px; /* From 15px */
+    }
+
+    /* Artist Statement Header2 Font Resizing */
+    .artist-statement-header2 {
+        font-size: 18px; /* From 20px */
+    }
+
+    /* Artist Statement Description Font Resizing */
+    .artist-statement-description {
+        font-size: 12px; /* From 15px */
     }
 }
