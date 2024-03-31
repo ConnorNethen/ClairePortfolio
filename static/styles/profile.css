@@ -120,7 +120,7 @@
 
     /* Portrait Image Width Change */
     .portrait-image {
-        width: 80%; /* From 90% */
+        width: 70%; /* From 90% */
     }
 
     /* About Header1 (inside about-me) */
@@ -161,6 +161,12 @@
     /* About-Portrait-Container Flex-Direction Change */
     .about-portrait-container {
         flex-direction: column; /* From column-reverse */
+    }
+
+    /* Portrait Image Width & Padding Change */
+    .portrait-image {
+        width: 80%; /* From 70% */
+        padding: 1.5% 0; /* Add slight padding above and below image */
     }
 
     /* Artist Statement Bordering/Padding Removal */
