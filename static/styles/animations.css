@@ -1,61 +1,46 @@
+/* Animations Class (contains animations-header1 & animation-images) */
 .animations {
     font-family: Arial, sans-serif;
     background-color: #36454F;
     color: white;
-    padding-top: 6%;
+    padding-top: 4.5%;
     height: 100%;
     max-width: 100%;
     display: flex;
     flex-direction: column;
 }
 
-.h1-animations {
+/* Animations-Header1 Class */
+.animations-header1 {
     font-size: 75px;
     text-align: center;
-    margin: 0 0; /* Play with */
+    margin: 0 0;
 }
 
+/* Animation-Images Class (contains animation-img-container) */
 .animation-images {
     display: flex;
-    padding: 0.5%; /* Add padding for spacing */
+    padding: 0.5% 0 2% 0; /* Add padding for spacing */
     flex-wrap: wrap; /* Wrap images to the next line if they don't fit horizontally */
     justify-content: space-evenly;
 }
 
+/* Animation-Img-Container Class (inside animation-images, contains image-overlay-wrapper & animations-captions) */
 .animation-img-container {
-    flex-basis: 29%; /* Each container will take up roughly 29% of the row width */
-    margin: 2%; /* Add some margin between containers */
+    flex-basis: 29%; /* Takes up 29% of a row within the animation-images class */
+    margin: 2%; /* Small margin between containers */
     box-sizing: border-box;
-    text-align: center; /* Center text */
-}
-
-.animation-image {
-    width: 100%; /* Make image take up full container width */
-    object-fit: cover; /* may not need */
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2); 
-    display: block; /* Display block to remove bottom space */
-}
-
-.animations-captions, .animations-text-box {
-    font-family: Arial, sans-serif;
-    color: #FFFFFF;
     text-align: center;
-    width: 100%;
 }
 
-.animations-captions {
-    margin: 2.5% 0;
-    font-size: 30px;
-    font-style: italic;
-    text-decoration: underline;
-}
-
+/* Image-Overlay-Wrapper Class (contains overlay-text-box) */
 .image-overlay-wrapper {
     position: relative;
-    transition: transform 0.75s; /* Smooth transition for scaling */
     cursor: pointer; /* Optional: Changes the cursor on hover */
+    padding-bottom: 3%;
 }
 
+/* Overlay-Text-Box Class (inside image-overlay-wrapper) */
 .overlay-text-box {
     position: absolute;
     top: 50%;
@@ -67,161 +52,207 @@
     box-sizing: border-box;
     text-align: center;
     opacity: 0;
-    transition: opacity 0.5s ease-in-out, transform 0.75s ease-in-out; /* Include transform for consistent scaling */
+    transition: opacity 0.75s ease-in-out;
     z-index: 2; /* Make sure text box is above image */
-
-    background: rgba(0, 0, 0, 0.2); /* Possibly remove */
+    background: rgba(0, 0, 0, 0.2); /* Slight background for text */
+    font-size: 26px;
 }
 
+/* Animation-Image Class (inside image-overlay-wrapper) */
+.animation-image {
+    width: 100%; /* Image takes up full container width */
+    object-fit: cover; /* may not need */
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2); /* Shadowing around image */
+    display: block;
+    transition: transform 0.75s ease-in-out, opacity 0.75s, filter 0.75s ease-in-out; /* Image transitions */
 
-/* Min-Width: 1500px */
-@media (min-Width: 1500px) {
-    /* Font size of text box for screens larger than 1500px */
-    .overlay-text-box {
-        font-size: 26px;
-    }
+}
+
+/* Animations-Captions Class (inside animation-img-container) */
+.animations-captions {
+    font-family: Arial, sans-serif;
+    color: #FFFFFF;
+    text-align: center;
+    width: 100%;
+    margin: 2.5% 0;
+    font-size: 40px;
+    font-style: italic;
+    text-decoration: none;
+    display: inline;
+
+    /* Needed for underline on hover animation for larger screens */
+    transition: color 0.75s;
+    position: relative;
+}
+
+/* Targeting the hyperlink in all states */
+a:link, a:visited, a:hover, a:active, a:focus {
+    text-decoration: none; /* Remove the underline */
+    color: inherit; /* Keep text color consistent */
+}
+
+/* Show-Overlay Class for the Overlay-Text-Box Class (ON CLICK) */
+.show-overlay .overlay-text-box {
+    opacity: 1;
+}
+
+/* Show-Overlay Class for the Animation-Image Class (ON CLICK) */
+.show-overlay .animation-image {
+    transform: scale(1.05);
+    opacity: 0.8;
+    filter: blur(2px);
 }
 
 /* Max-Width: 1500px */
 @media (max-Width: 1500px) {
+    /* Animations Top-Paddding Change */
+    .animations {
+        padding-top: 6.5%; /* From 4.5% */
+    }
+
+    /* Animations Header1 Font Size Change */
+    .animations-header1 {
+        font-size: 65px; /* From 75px */
+    }
+
     /* Font size of text box for screens smaller than 1500px */
     .overlay-text-box {
         font-size: 22px; /* From 26px */
     }
-}
 
+    /* Animations Captions Font Change */
+    .animations-captions {
+        font-size: 32px; /* From 40px */
+    }
+}
 
 /* Min-Width: 1024px */
 @media (min-width: 1024px) {
-    /* Animation for showing image overlay (on hover) */
+    /* Animation for showing overlay-text-box (ON HOVER) */
     .image-overlay-wrapper:hover .overlay-text-box {
-        opacity: 1; /* Show the text box */
+        opacity: 1;
     }
     
+    /* Animation for showing animation-image (ON HOVER) */
     .image-overlay-wrapper:hover .animation-image {
-        transform: scale(1.05); /* Scale the image */
-        opacity: 0.8; /* Semi-transparent when hover */
+        transform: scale(1.05);
+        opacity: 0.8;
         filter: blur(2px);
-        -webkit-filter: blur(2px);
     }
 
-    /* Animation for showing image overlay */
-    .image-overlay-wrapper .overlay-text-box {
-        transition: opacity 0.75s ease-in-out; /* Smooth transition for the text box */
+    /* Animations Captions Underline (ON HOVER) */
+    .animations-captions::after {
+        content: '';
+        position: absolute;
+        width: 0; /* Start with no underline */
+        height: 3px; /* Thickness of the underline */
+        bottom: 1px; /* Distance of underline from text */
+        left: 50%;
+        background-color: #FFFFFF; /* Color of the underline */
+        transition: width 0.6s ease, left 0.6s ease; /* Animate width and position */
     }
-    
-    .image-overlay-wrapper .animation-image {
-        transition: transform 0.75s ease-in-out, opacity 0.75s, filter 0.75s ease-in-out; /* Smooth transition for the image */
-    }
-
-    /* Show Overlay class */
-    .show-overlay .overlay-text-box {
-        opacity: 1; /* Show the text box */
-    }
-    
-    .show-overlay .animation-image {
-        transform: scale(1.05); /* Scale the image */
-        opacity: 0.8; /* Semi-transparent when hover */
-        filter: blur(2px);
-        -webkit-filter: blur(2px);
+    .animations-captions:hover::after {
+        width: 100%; /* Full width on hover */
+        left: 0; /* Align to the left on hover */
     }
 }
 
-/* Larger screen */
+/* Max-Width: 1024px */
 @media (max-width: 1024px) {
+    /* Animations Top-Padding Change */
     .animations {
-        max-height: none;
-        padding-top: 6.5%; /* From 6% */
+        padding-top: 7%; /* From 6.5% */
     }
 
-    .h1-animations {
-        font-size: 65px;
+    /* Animations Header1 Font Size Change */
+    .animations-header1 {
+        font-size: 55px; /* From 65px */
     }
 
+    /* Animations Captions Font Size Change & Underline Always */
     .animations-captions {
-        font-size: 24px;
-    }
-    
-    .animations-text-box {
-        font-size: 13px;
+        font-size: 24px; /* From 32px */
+        text-decoration: underline;
     }
 
+    /* Overlay Text Box Font Size & Width Change */
     .overlay-text-box {
         font-size: 17px; /* From 22px */
         width: 70%; /* From auto */
     }
-
-    /* Animation for showing image overlay */
-    .image-overlay-wrapper .overlay-text-box {
-        transition: opacity 0.75s ease-in-out; /* Smooth transition for the text box */
-    }
-    
-    .image-overlay-wrapper .animation-image {
-        transition: transform 0.75s ease-in-out, opacity 0.75s, filter 0.75s ease-in-out; /* Smooth transition for the image */
-    }
-
-    /* Show Overlay class */
-    .show-overlay .overlay-text-box {
-        opacity: 1; /* Show the text box */
-    }
-    
-    .show-overlay .animation-image {
-        transform: scale(1.05); /* Scale the image */
-        opacity: 0.8; /* Semi-transparent when hover */
-        filter: blur(2px);
-        -webkit-filter: blur(2px);
-    }
 }
 
-/* Tablet and smaller devices (<=768px) */
+/* Max-Width: 768px */
 @media (max-width: 768px) {
+    /* Animations Top-Padding Change */
     .animations {
-        padding-top: 9.5%; /* From 6.5% */
-        max-height: none;
+        padding-top: 9.5%; /* From 7% */
     }
 
-    .h1-animations {
-        font-size: 50px;
+    /* Animations Header1 Font Size Change */
+    .animations-header1 {
+        font-size: 40px; /* From 55px */
     }
 
+    /* Animation Image Container Size Change */
     .animation-img-container {
         flex-basis: 45%; /* From 29% */
     }
 
+    /* Animations Captions Font Size Change */
     .animations-captions {
-        font-size: 23px;
-    }
-    
-    .animations-text-box {
-        font-size: 12px;
+        font-size: 20px; /* From 24px */
     }
 
+    /* Overlay Text Box Font & Width Change */
     .overlay-text-box {
         font-size: 13px; /* From 17px */
         width: 85%; /* From 70% */
     }
 }
 
-/* Smartphone and smaller devices (<=480px) */
+/* Max-Width: 480px */
 @media (max-width: 480px) {
+    /* Animations Top-Padding Change */
     .animations {
-        padding-top: 11%; /* From 9.5% */
-        max-height: none;
+        padding-top: 14%; /* From 9.5% */
     }
     
-    .h1-animations {
-        font-size: 40px; /* Smaller font size for very small screens */
+    /* Animations Header1 Font Size Change */
+    .animations-header1{
+        font-size: 30px; /* From 40px */
     }
 
+    /* Animations Captions Font Size Change */
     .animations-captions {
-        font-size: 16px;
-    }
-    
-    .animations-text-box {
-        font-size: 11px;
+        font-size: 16px; /* From 20px */
     }
 
+    /* Overlay Text Box Font Size Change */
     .overlay-text-box {
         font-size: 10px; /* From 13px */
+    }
+}
+
+/* Max-Width: 300px */
+@media (max-width: 300px) {
+    /* Animations Top-Padding Change */
+    .animations {
+        padding-top: 14.5%; /* From 14% */
+    }
+
+    /* Animation Header1 Font Size Change */ 
+    .animations-header1 {
+        font-size: 25px; /* From 30px */
+    }
+
+    /* Animations Captions Font Size Change */
+    .animations-captions {
+        font-size: 15px; /* From 16px */
+    }
+
+    /* Overlay Text Box Font Size Change */
+    .overlay-text-box {
+        font-size: 9px; /* From 10px */
     }
 }
