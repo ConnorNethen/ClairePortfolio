@@ -62,7 +62,6 @@
     font-size: 20px;
     font-family: 'Catamaran'; /* MAY CHANGE */
     text-decoration: none;
-    transition: font-size 0.4s ease; /* Transition effect for changing font-size */
     white-space: nowrap; 
 }
 
@@ -84,7 +83,7 @@
 
 /* Transformed Toggler Class */
 .transformed-toggler {
-    border-radius: 0px;
+    border-radius: 0px; /* Remove the rounded corners */
     outline: none;
 }
 
@@ -102,24 +101,58 @@
 
 /* Min-Width: 1024px */
 @media (min-width: 1024px) {
-    /* Animations for navbar brand, navbar toggler, and nav links */
+    /* Navbar brand Font Size Transition (ON HOVER) */
     .navbar-brand {
-        transition: font-size 0.7s ease;
+        transition: font-size 0.6s ease;
+        position: relative;
+    }
+    .navbar-brand:hover {
+        font-size: 46px; /* enlarge from 43px */
     }
 
+    /* Navbar Brand Underline (ON HOVER) */
+    .navbar-brand::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 4px;
+        bottom: 1px;
+        left: 0%; /* Start on left side */
+        background-color: #000000;
+        transition: width 0.6s ease; /* Animate width */
+    }
+    .navbar-brand:hover::after {
+        width: 100%; /* Full width on hover */
+    }
+
+    /* Navbar Toggler Background Change (ON HOVER & FOCUS) */
     .navbar-toggler:hover, .navbar-toggler:focus {
         background-color: white;
         outline: none;
     }
     
-    .navbar-brand:hover {
-        text-decoration-line: underline;
-        font-size: 46px; /* enlarge from 43px */
+    /* Nav Link Font Size Transition (ON HOVER) */
+    .nav-link {
+        transition: font-size 0.4s ease, color 0.4s;
+        position: relative;
+    }
+    .nav-link:hover {
+        font-size: 23px; /* enlarge from 20px */
     }
 
-    .nav-link:hover {
-        text-decoration: underline;
-        font-size: 23px; /* enlarge from 20px */
+    /* Nav Link Underline (ON HOVER) */
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0; /* Start with no underline */
+        height: 2px; /* Thickness of the underline */
+        bottom: 1px; /* Distance of underline from text */
+        right: 0%; /* Start on right side */
+        background-color: #000000; /* Color of the underline */
+        transition: width 0.4s ease; /* Animate width */
+    }
+    .nav-link:hover::after {
+        width: 100%; /* Full width on hover */
     }
 }
 
