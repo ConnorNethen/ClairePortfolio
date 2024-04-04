@@ -117,9 +117,7 @@
     <!-- Artwork Section -->
     <div id="Artwork" class="artwork">
         <div class="container-artwork">
-            <div class="artwork-description">
-                <h1 class="h1-artwork">My Artwork</h1>
-            </div>
+            <h1 class="artwork-header1">My Artwork</h1>
             <div class="artwork-images">
                 <div class="artwork-img-container">
                     <a href="javascript:void(0);">
@@ -184,8 +182,8 @@
         <a class="nextSlide" onclick="nextImage()"><img src="{{ url_for('static', filename='assets/Icons/modal_right_arrow.png')}}"></a>
         <div class="modal-content-wrapper">
             <img class="modal-content" id="img01">
-            <div id="caption"></div>
-            <div id="medium"></div>
+            <div class="modal-caption" id="caption"></div>
+            <div class="modal-medium" id="medium"></div>
         </div>
     </div>
 

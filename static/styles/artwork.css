@@ -1,14 +1,13 @@
+/* Artwork Class (contains container-artwork) */
 .artwork {
     padding: 0em;
     font-family: Arial, sans-serif;
     margin: 0;
 }
 
+/* Container-Artwork Class (contains artwork-header1 & artwork-images) */
 .container-artwork {
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto;
-    padding-top: 3%;
+    padding-top: 4.5%;
     padding-bottom: 5%;
     background-color: #A7C7E7;
     display: flex;
@@ -17,14 +16,24 @@
     align-items: center;
 }
 
+/* Artwork-Header1 Class (inside container-artwork) */
+.artwork-header1 {
+    text-align: center;
+    font-size: 75px;
+    margin: 0 0;
+}
+
+/* Artwork-Images Class (contains artwork-img-container) */
 .artwork-images {
     width: auto; /* Adjusted to manage the overall width of the image section */
     max-width: 70%;
-    column-width: 300px; /* From 225px (CHANGE PER SCREEN SIZE?) */
-    column-gap: 1em; /* MAY NOT NEED */
+    column-width: 300px;
+    column-gap: 1em;
     display: block; /* Change to block display for column-width to work */
+    padding-top: 1.5%;
 }
 
+/* Artwork-Img-Container Class (contains artwork-image) */
 .artwork-img-container {
     margin-bottom: 1em;
     break-inside: avoid;
@@ -33,38 +42,13 @@
     width: 100%; /* Reset the width to default to avoid overflow */
 }
 
+/* Artwork-Image Class (inside artwork-img-container) */
 .artwork-image {
     width: 100%; /* Full width of the column */
     height: auto;
     display: block;
-
     border: 1px solid black; /* MAY REMOVE LATER!!!! */
 }
-
-.artwork-description {
-    flex: 1; /* This will allow the text section to take up the remaining space */
-    display: flex;
-    width: 75%;
-    flex-direction: column;
-    justify-content: center; /* Center the content vertically */
-    align-items: center; /* Center the content horizontally */
-    padding-top: 2.5%;
-    margin-top: 0.5%;
-    margin-bottom: 2%;
-}
-
-
-.h1-artwork {
-    text-align: center;
-    padding: 0px;
-    margin: 0px;
-    font-size: 75px;
-}
-
-
-
-
-
 
 /* MODAL */
 /* The Modal (background) */
@@ -79,6 +63,7 @@
     background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
     align-items: center;
     justify-content: center;
+    max-height: 100vh;
 }
 
 /* Modal Wrapper */
@@ -99,63 +84,79 @@
     height: auto;
     max-height: 90vh;
     overflow-y: auto;
-
-    transition: opacity 0.5s ease-out; /* Control the speed and type of transition */
+    transition: opacity 0.5s ease-out;
 }
 
-/* Style for animating the current image out */
-.fade-out {
+/* Style for animating the current image out/in */
+.modal-fade-out {
     opacity: 0;
 }
-
-/* Style for animating the next image in */
-.fade-in {
+.modal-fade-in {
     opacity: 1;
 }
 
 /* Caption of Modal Image */
-#caption {
+.modal-caption {
     text-align: center;
     color: #dbdbdb;
     max-width: 70%;
     padding-top: 5px;
+    transition: opacity 0.5s ease-out;
 }
 
-#medium {
+/* Style for animating the current caption out/in */
+.caption-fade-out {
+    opacity: 0;
+}
+.caption-fade-in {
+    opacity: 1;
+}
+
+/* Medium of Modal Image */
+.modal-medium {
     text-align: center;
     color: #dbdbdb;
     max-width: 70%;
     padding-top: 5px;
     padding-bottom: 10px;
+    transition: opacity 0.5s ease-out;
+}
+
+/* Style for animating the current medium out/in */
+.medium-fade-out {
+    opacity: 0;
+}
+.medium-fade-in {
+    opacity: 1;
 }
 
 /* The Close Button */
 .close {
     position: absolute;
-    top: 40px;
-    right: 30px;
+    top: 25px;
+    right: 40px;
     color: #f1f1f1;
     font-size: 55px;
     font-weight: bold;
-    transition: 0.3s;
 }
 
 /* Slide Counter */
 .numberText {
     position: absolute;
-    top: 50px;
+    top: 25px;
     left: 30px;
     color: #f1f1f1;
     font-size: 30px;
     font-weight: bold;
 }
 
+/* PrevSlide & NextSlide Buttons */
 .prevSlide, .nextSlide {
     background-color: white;
     cursor: pointer;
     position: absolute;
     background-color: transparent;
-    top: 45%;
+    top: 47%;
     width: 40px;
     height: 40px;
 }
@@ -172,6 +173,7 @@
     margin-right: 1.5%;
 }
 
+/* Img Inside PrevSlide & NextSlide */
 .prevSlide img, .nextSlide img {
     width: 40px;
     height: 40px;
@@ -179,7 +181,35 @@
 
 
 
+/* Max-Width: 1500px */
+@media (max-Width: 1500px) {
+    /* Container Artwork Padding Change */
+    .container-artwork {
+        padding-top: 7%; /* From 4.5% */
+        padding-bottom: 6%; /* From 5% */
+    }
 
+    /* Artwork Header1 Font Size Change */
+    .artwork-header1 {
+        font-size: 65px; /* From 75px */
+    }
+
+    /* Artwork Images Column-Width Change */
+    .artwork-images {
+        max-width: 80%; /* From 70% */
+        column-width: 260px; /* From 300px */
+    }
+
+    /* PrevSlide Button Margin-Left Change */
+    .prevSlide {
+        margin-left: 1%; /* From 1.5% */
+    }
+    
+    /* NextSlide Button Margin-Right Change */
+    .nextSlide {
+        margin-right: 1%; /* From 1.5% */
+    }
+}
 
 /* Min-Width: 1024px */
 @media (min-width: 1024px) {
@@ -187,139 +217,176 @@
     .artwork-image {
         transition: transform 0.5s, box-shadow 0.5s;
     }
-    
     .artwork-image:hover {
         transform: scale(1.025); /* Enlarge the image on hover */
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25), 0 6px 20px 0 rgba(0, 0, 0, 0.25); /* Add shadow behind image for 3D effect*/
     }
 
     /* Modal close button hover and focus animation */
+    .close {
+        transition: color 0.3s;
+    }
     .close:hover,
     .close:focus {
         color: #bbb;
         text-decoration: none;
         cursor: pointer;
     }
+
+    /* Modal next/prev button hover animation */
+    .prevSlide, .nextSlide {
+        transition: transform 0.5s;
+    }
+    .prevSlide:hover, .nextSlide:hover {
+        transform: scale(1.25);
+    }
 }
   
-/* Larger screen */
+/* Max-Width: 1024px */
 @media (max-width: 1024px) {
+    /* Container Artwork Top-Padding Change */
     .container-artwork {
         padding-top: 3.5%; /* From 3% */
     }
 
-    .artwork-images {
-        max-width: 80%; /* From 70% */
-    }
-
-    .h1-artwork {
-        font-size: 55px;
-    }
-
-    .paragraph-artwork {
-        font-size: 16px;
+    /* Artwork Header1 Font Size Change */
+    .artwork-header1 {
+        font-size: 55px; /* From 65px */
     }
 
     /* Modal Content (image) */
     .modal-content {
         max-width: 87vw; /* From 90vw */
+        max-height: 87vh; /* From 90vh */
     }
 
-    /* The Close Button */
+    /* Close Button Size Change */
     .close {
         font-size: 45px; /* From 55px */
     }
 
-    /* Slide Counter */
+    /* Slide Counter Font Size Change */
     .numberText {
         font-size: 25px; /* From 30px */
     }
 
+    /* PrevSlide & NextSlide Width & Height Change */
     .prevSlide, .nextSlide {
         width: 35px; /* From 40px */
         height: 35px; /* From 40px */
     }
 
+    /* Img Size Change */
     .prevSlide img, .nextSlide img {
         width: 35px; /* From 40px */
         height: 35px; /* From 40px */
     }
 }
 
-/* Tablet and smaller devices (<=768px) */
+/* Max-Width: 768px */
 @media (max-width: 768px) {
+    /* Container Artwork Top-Padding Change */
     .container-artwork {
-        padding-top: 6.5%; /* From 3.5% */
+        padding-top: 9.5%; /* From 3.5% */
     }
 
-    .h1-artwork {
-        font-size: 40px;
+    /* Artwork Header1 Font Size Change */
+    .artwork-header1 {
+        font-size: 40px; /* From 55px */
     }
 
-    .paragraph-artwork {
-        font-size: 14px;
-    }
-
+    /* Artwork Images Max-Width, Column-Width, & Top-Padding Change */
     .artwork-images {
         max-width: 85%; /* From 80% */
-        column-width: 200px; /* From 300px */
+        column-width: 207px; /* From 260px */
+        padding-top: 2%; /* From 1.5% */
     }
 
     /* Modal Content (image) */
     .modal-content {
         max-width: 85vw; /* From 87vw */
+        max-height: 85vh /* From 87vh */
     }
 
-    /* The Close Button */
+    /* Close Button Size Change */
     .close {
         font-size: 40px; /* From 45px */
     }
 
-    /* Slide Counter */
+    /* Slide Counter Font Size Change */
     .numberText {
         font-size: 22px; /* From 25px */
     }
 
+    /* PrevSlide & NextSlide Width & Height Change */
     .prevSlide, .nextSlide {
         width: 30px; /* From 35px */
         height: 30px; /* From 35px */
     }
 
+    /* Img Size Change */
     .prevSlide img, .nextSlide img {
         width: 30px; /* From 35px */
         height: 30px; /* From 35px */
     }
 }
 
-/* Smartphone and smaller devices (<=480px) */
+/* Max-Width: 480px */
 @media (max-width: 480px) {
+    /* Container Artwork Top-Padding Change */
     .container-artwork {
-        padding-top: 8%; /* From 6.5% */
+        padding-top: 14%; /* From 9.5% */
     }
 
-    .h1-artwork {
-        font-size: 30px;
+    /* Artwork Images Max-Width & Top-Padding Change */
+    .artwork-images {
+        max-width: 82.5%; /* From 85% */
+        padding-top: 2.5%; /* From 2% */
     }
 
-    .paragraph-artwork {
-        font-size: 12px;
+    /* Artwork Header1 Font Size Change */
+    .artwork-header1 {
+        font-size: 30px; /* From 40px */
     }
 
+    /* PrevSlide Button Margin-Left Change */
     .prevSlide {
-        margin-left: 5px;
+        margin-left: 0.5%; /* From 1% */
     }
 
+    /* NextSlide Button Margin-Right Change */
     .nextSlide {
-        margin-right: 5px;
+        margin-right: 0.5%; /* From 1% */
     }
 
+    /* PrevSlide & NextSlide Width, Height, & Position Change */
     .prevSlide, .nextSlide {
         width: 25px; /* From 30px */
         height: 25px; /* From 30px */
+        top: 45%; /* From 47% */
     }
 
+    /* Img Size Change */
     .prevSlide img, .nextSlide img {
         width: 25px; /* From 30px */
         height: 25px; /* From 30px */
+    }
+}
+
+/* Max-Width: 300px */
+@media (max-width: 300px) {
+    /* Container Artwork Top-Padding Change */
+    .container-artwork {
+        padding-top: 15%; /* From 14% */
+    }
+
+    /* Artwork Header1 Font Size Change */
+    .artwork-header1 {
+        font-size: 25px; /* From 30px */
+    }
+
+    /* Modal Content Max-Width Change */
+    .modal-content {
+        max-width: 82vw; /* From 85vw */
     }
 }
