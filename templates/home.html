@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page Title (may change later) -->
+    <title>Claire Hanel</title>
+    <!-- Favicon (may change later, currently paintbrush) -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='assets/Icons/paint_brush.png')}}">
 
     <link rel="stylesheet" href="{{ url_for('static', filename='/styles/navigationbar.css') }}">
 
     <link rel="stylesheet" href="{{ url_for('static', filename='/styles/carousel.css') }}">
     <style>
-        :root {
+        :root { /* Waiting for claire to create images */ 
             --background-image-1: url('{{ url_for('static', filename='assets/images/totoro_banner.jpg') }}');
             --background-image-2: url('{{ url_for('static', filename='assets/images/studio_ghibli_banner.png') }}');
         }

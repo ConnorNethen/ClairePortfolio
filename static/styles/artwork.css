@@ -99,6 +99,18 @@
     height: auto;
     max-height: 90vh;
     overflow-y: auto;
+
+    transition: opacity 0.5s ease-out; /* Control the speed and type of transition */
+}
+
+/* Style for animating the current image out */
+.fade-out {
+    opacity: 0;
+}
+
+/* Style for animating the next image in */
+.fade-in {
+    opacity: 1;
 }
 
 /* Caption of Modal Image */
@@ -116,7 +128,6 @@
     padding-top: 5px;
     padding-bottom: 10px;
 }
-
 
 /* The Close Button */
 .close {
@@ -138,9 +149,6 @@
     font-size: 30px;
     font-weight: bold;
 }
-
-
-
 
 .prevSlide, .nextSlide {
     background-color: white;
