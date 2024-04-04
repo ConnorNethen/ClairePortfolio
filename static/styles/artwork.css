@@ -97,6 +97,7 @@
 
 /* Caption of Modal Image */
 .modal-caption {
+    font-size: 21px;
     text-align: center;
     color: #dbdbdb;
     max-width: 70%;
@@ -114,6 +115,7 @@
 
 /* Medium of Modal Image */
 .modal-medium {
+    font-size: 21px;
     text-align: center;
     color: #dbdbdb;
     max-width: 70%;
@@ -254,10 +256,14 @@
         font-size: 55px; /* From 65px */
     }
 
-    /* Modal Content (image) */
-    .modal-content {
-        max-width: 87vw; /* From 90vw */
-        max-height: 87vh; /* From 90vh */
+    /* Modal Caption Font Size Change */
+    .modal-caption {
+        font-size: 19px; /* From 21px */
+    }
+
+    /* Modal Medium Font Size Change */
+    .modal-medium {
+        font-size: 19px; /* From 21px */
     }
 
     /* Close Button Size Change */
@@ -265,8 +271,9 @@
         font-size: 45px; /* From 55px */
     }
 
-    /* Slide Counter Font Size Change */
+    /* Slide Counter Position & Font Size Change */
     .numberText {
+        left: 20px; /* From 30px */
         font-size: 25px; /* From 30px */
     }
 
@@ -302,19 +309,36 @@
         padding-top: 2%; /* From 1.5% */
     }
 
-    /* Modal Content (image) */
-    .modal-content {
-        max-width: 85vw; /* From 87vw */
-        max-height: 85vh /* From 87vh */
+    /* Modal Content Wrapper Top-Padding Change */
+    .modal-content-wrapper {
+        padding-top: 30px; /* From 5px */
     }
 
-    /* Close Button Size Change */
+    /* Modal Content Max-Width & Max-Height Change */
+    .modal-content {
+        max-width: 85vw; /* From 90vw */
+        max-height: 87vh /* From 90vh */
+    }
+
+    /* Modal Caption Font Size Change */
+    .modal-caption {
+        font-size: 18px; /* From 19px */
+    }
+
+    /* Modal Medium Font Size Change */
+    .modal-medium {
+        font-size: 18px; /* From 19px */
+    }
+
+    /* Close Button Position & Size Change */
     .close {
+        top: 15px; /* From 25px */
         font-size: 40px; /* From 45px */
     }
 
-    /* Slide Counter Font Size Change */
+    /* Slide Counter Position & Font Size Change */
     .numberText {
+        top: 20px; /* From 25px */
         font-size: 22px; /* From 25px */
     }
 
@@ -349,6 +373,16 @@
         font-size: 30px; /* From 40px */
     }
 
+    /* Modal Caption Font Size Change */
+    .modal-caption {
+        font-size: 17px; /* From 18px */
+    }
+
+    /* Modal Medium Font Size Change */
+    .modal-medium {
+        font-size: 17px; /* From 18px */
+    }
+
     /* PrevSlide Button Margin-Left Change */
     .prevSlide {
         margin-left: 0.5%; /* From 1% */
@@ -363,7 +397,6 @@
     .prevSlide, .nextSlide {
         width: 25px; /* From 30px */
         height: 25px; /* From 30px */
-        top: 45%; /* From 47% */
     }
 
     /* Img Size Change */
@@ -387,6 +420,16 @@
 
     /* Modal Content Max-Width Change */
     .modal-content {
-        max-width: 82vw; /* From 85vw */
+        max-width: 83vw; /* From 85vw */
+    }
+
+    /* Modal Caption Font Size Change */
+    .modal-caption {
+        font-size: 16px; /* From 17px */
+    }
+
+    /* Modal Medium Font Size Change */
+    .modal-medium {
+        font-size: 16px; /* From 17px */
     }
 }
