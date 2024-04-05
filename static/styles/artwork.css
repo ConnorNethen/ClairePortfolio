@@ -63,7 +63,6 @@
     background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
     align-items: center;
     justify-content: center;
-    max-height: 100vh;
 }
 
 /* Modal Wrapper */
@@ -180,8 +179,6 @@
     width: 40px;
     height: 40px;
 }
-
-
 
 /* Max-Width: 1500px */
 @media (max-Width: 1500px) {

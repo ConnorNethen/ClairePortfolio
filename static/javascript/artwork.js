@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     var imgContainers = document.getElementsByClassName('artwork-img-container');
-    // Convert HTMLCollection to an array and map to a new array with image details.
+    // Convert HTMLCollection to an array and map to a new array with image details
     var images = Array.from(imgContainers).map(function(container, index) {
         var img = container.getElementsByTagName('img')[0];
         return { src: img.src, alt: img.alt, index: index };
