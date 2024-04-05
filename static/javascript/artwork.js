@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function () {
         event.stopPropagation();
     });
 
-    /* Helper Functions Below */
+    /***  Helper Functions Below ***/
     // Function to reset the modal image/caption/medium classes
     function resetModal() {
         modalImg.className = 'modal-content';
@@ -129,6 +129,7 @@ document.addEventListener('DOMContentLoaded', function () {
         captionText.textContent = capt; // Caption text
         mediumText.textContent = medi; // Medium text
         numberText.textContent = `${image.index + 1} / ${totalImages}`; // Image counter text
+        currentIndex = image.index; // update current index
     }
 
     // Function to close the modal and reset necessary state variables
