@@ -113,25 +113,20 @@
         padding: 0 13px; /* Add padding */
     }
 
-    /* About-Me & Artist-Statement Margin Changes */
-    .about-me, .artist-statement {
-        margin-left: 1%;
-        margin-right: 2%; /* Slightly larger margin on right side to minimize overlap of artist statement shadow */
+    /* About-Description Margin Addition & Font Size Change */
+    .about-description {
+        margin: 1% 3.5% 0% 3.5%; /* Slightly larger margin on right side to minimize overlap of artist statement shadow */
+        font-size: 17px; /* From 18px */
     }
 
     /* Portrait Image Width Change */
     .portrait-image {
-        width: 70%; /* From 90% */
+        width: 80%; /* From 90% */
     }
 
     /* About Header1 (inside about-me) */
     .about-header1 {
         font-size: 26px; /* From 28px */
-    }
-
-    /* About Description (inside about-me) */
-    .about-description {
-        font-size: 17px; /* From 18px */
     }
 
     /* Artist Statement Header2 (inside artist-statement) */
@@ -167,11 +162,6 @@
     /* Portrait Container Padding Addition */
     .portrait-container {
         padding: 1.5% 0 2.5% 0; /* Add slight padding above and below image */
-    }
-
-    /* Portrait Image Width Change */
-    .portrait-image {
-        width: 80%; /* From 70% */
     }
 
     /* Artist Statement Bordering/Padding Removal */
@@ -248,7 +238,7 @@
 
     /* About Header1 Font Resizing */
     .about-header1 {
-        font-size: 23px; /* From 25px */
+        font-size: 22px; /* From 25px */
     }
 
     /* About Description Font Resizing */
@@ -281,7 +271,7 @@
 
     /* About Header1 Font Resizing */
     .about-header1 {
-        font-size: 20px; /* From 23px */
+        font-size: 20px; /* From 22px */
     }
 
     /* About Description Font Resizing */
