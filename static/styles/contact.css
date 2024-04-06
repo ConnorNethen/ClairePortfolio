@@ -1,87 +1,101 @@
-.contact {
-    padding-top: 3%;
-    font-family: Arial, sans-serif;
-}
-
-.header-section{
-    padding-bottom: 9%;
-    text-align: center;
-    font-size: 17px;
-}
-
-.header {
-    font-size: 65px;
-    padding: 0;
-    margin: 0;
-}
-
+/* Container Contact Class (contains left-column & right-column) */
 .container-contact {
-    max-width: 100%;
+    width: 100%;
     max-height: 100vh;
-    margin: 0 auto;
-    padding: 3% 1%;
     display: flex;
 }
 
-.left-column, .right-column {
-    flex: 1; /* This makes both columns take up equal space */
+/* Left Column Class (contains img-contact) */
+.left-column {
+    flex-basis: 45%;
     display: flex;
-
-    justify-content: center;
+    justify-content: left;
     align-items: center;
 }
 
-.right-column {
-    display: flex;
-    flex-direction: column; /* Stack children vertically */
-
-    max-width: 50%;
-}
-
+/* Img Contact (inside left-column) */
 .img-contact {
     max-width: 100%;
     height: auto;
     max-height: 100%;
 }
 
-.contact-form {
-    margin-top: 7.5%;
-    margin-bottom: 10%;
-    width: 80%;
+/* Right Column Class (contains contact form) */
+.right-column {
+    display: flex;
+    flex-basis: 55%;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center;
+    align-items: center;
 }
 
+/* Contact Form (contains header-section, input-group, message-input-group, & submit-wrapper) */
+.contact-form {
+    width: 85%;
+}
+
+/* Header Section Class (contains contact-header1 & header-text) */
+.header-section {
+    padding-bottom: 5%;
+}
+
+/* Contact Header1 Class (inside header-section) */
+.contact-header1 {
+    font-size: 55px;
+    text-align: left;
+    margin: 0;
+}
+
+/* Header Text (inside header-section) */
+.header-text {
+    font-size: 25px;
+    text-align: left;
+}
+
+/* Input Group Class (contains input, allpop & popup) */
 .input-group {
+    display: flex; /* For popup positioning */
     position: relative;
-    display: flex;
     align-items: center;
     margin-bottom: 2%;
 }
 
+/* Message Input Group Class (contains textarea & popup) */
 .message-input-group {
+    display: flex; /* For popup positioning */
     position: relative;
-    display: flex;
     align-items: center;
     padding-top: 2%;
-    margin-bottom: 2%;
 }
 
+/* Input & Textarea Classes (user input areas) */
 input, textarea {
     width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    font-size: 20px;
-    padding-left: 1.5%;
-    padding-right: 1%;
     height: auto;
+    box-sizing: border-box;
+    font-size: 20px; /* Font size of input text */
+    padding: 0 1.5% 0 1.5%;
+}
+/* Input Class */
+input {
     min-height: 50px;
 }
-
+/* Textarea Class */
 textarea {
-    min-width: 100%;
-    max-height: 200px;
-    resize: vertical;
+    min-height: 75px;
+    max-height: 300px; /* Text-box height limit */
+    resize: vertical; /* Only resizable vertically */
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
 }
 
+/* Submit Wrapper Class (contains button & confirmationPopup) */
+.submit-wrapper {
+    position: relative;
+    text-align: center; /* Center button */
+}
+
+/* Button Class */
 button {
     text-align: center;
     text-emphasis-color: black;
@@ -105,26 +119,9 @@ button {
     color: black;
 }
 
-.submit-wrapper {
-    position: relative;
-    text-align: center; /* Center the button if needed */
-}
 
-.confirmationPopup {
-    display: none; /* Initially hidden */
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: -110%;
-    background-color: rgb(230, 0, 0); /* Default to error color, will be overridden by JavaScript */
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 8px;
-    z-index: 1;
-    white-space: nowrap;
-}
-
+/*** ALL POPUP CLASSES AND STYLES ***/
+/* AllPopup Class (inside input group, above name input) */
 .allPopup {
     display: none; /* Initially hidden */
     position: absolute;
@@ -141,6 +138,24 @@ button {
     white-space: nowrap;
 }
 
+/* ConfirmationPopup Class (inside submit wrapper, underneath submit button*/
+.confirmationPopup {
+    display: none; /* Initially hidden */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -110%;
+    background-color: rgb(230, 0, 0); /* Default to error color, will be overridden by JavaScript */
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px;
+    z-index: 1;
+    white-space: nowrap;
+}
+
+
+/* Popop Class (inside input/message input group, within each input area: name, email, & message) */
 .popup {
     display: none; /* Initially hidden */
     position: absolute;
@@ -170,31 +185,34 @@ button {
     border-color: transparent rgb(230, 0, 0) transparent transparent; /* Arrow points left */
 }
 
-/* Animation fade in */
+/* Popup Animation Fade In/Fade Out*/
 @keyframes fadeIn {
     from {opacity: 0;}
     to {opacity: 1;}
 }
-
-/* Animation fade out */
 @keyframes fadeOut {
     from {opacity: 1;}
     to {opacity: 0;}
 }
 
-/* Button animation only visibile on larger screens */
+/* Max-Width: 1500px */
+@media (max-width: 1500px) {
+    /* ADD STYLES HERE */
+}
+
+/* Min-Width: 1024px */
 @media (min-width: 1024px) {
+    /* Button focus animation only visibile on larger screens */
     button:active {
         background-color: lightgreen;
     }
-    
     button:focus {
         outline: none;
         box-shadow: 0 0 0 2px rgba(0, 128, 0, 0.5);
     }
 }
 
-/* Larger screen */
+/* Max-Width: 1024px */
 @media (max-width: 1024px) {
     .header-section{
         font-size: 14px;

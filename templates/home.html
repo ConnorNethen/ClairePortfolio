@@ -180,6 +180,7 @@
         <!-- Modal Buttons -->
         <a class="prevSlide" onclick="prevImage()"><img src="{{ url_for('static', filename='assets/Icons/modal_left_arrow.png')}}"></a>
         <a class="nextSlide" onclick="nextImage()"><img src="{{ url_for('static', filename='assets/Icons/modal_right_arrow.png')}}"></a>
+        <!-- Modal Image, Caption Text, & Medium Text -->
         <div class="modal-content-wrapper">
             <img class="modal-content" id="img01">
             <div class="modal-caption" id="caption"></div>
@@ -290,8 +291,8 @@
         <div class="right-column">
             <form id="contactForm" class="contact-form">
                 <div class="header-section">
-                    <h1 class="header" style="text-align: center;">Contact Me</h1>
-                    <p>Feel free to contact me by filling out the form below! Or reach out using my email [email here].</p>
+                    <h1 class="contact-header1">Contact Me</h1>
+                    <p class="header-text">Feel free to contact me by filling out the form below! Or reach out directly: [emailhere@gmail.com]</p>
                 </div>
                 <div class="input-group">
                     <div class="allPopup" id="allPopup"></div>
