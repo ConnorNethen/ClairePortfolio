@@ -3,6 +3,7 @@
     width: 100%;
     max-height: 100vh;
     display: flex;
+    flex-direction: row; /* Start with row */
 }
 
 /* Left Column Class (contains img-contact) */
@@ -36,7 +37,7 @@
 
 /* Header Section Class (contains contact-header1 & header-text) */
 .header-section {
-    padding-bottom: 5%;
+    padding-bottom: 4.5%;
 }
 
 /* Contact Header1 Class (inside header-section) */
@@ -93,32 +94,35 @@ textarea {
 .submit-wrapper {
     position: relative;
     text-align: center; /* Center button */
+    margin-top: 2%;
 }
 
 /* Button Class */
 button {
     text-align: center;
-    text-emphasis-color: black;
     color: white;
-    background-color: green;
+    background-color: #1E96C8;
+    background-image: linear-gradient(-180deg, #37AEE2 0%, #1E96C8 100%);
     border: none;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
     width: 80%;
-    height: 10% auto;
+    height: auto;
     border-radius: 8px;
-    display: block;
+    display: flex;
     margin: 0 auto;
-    margin-top: 2.5%;
-    transition: background-color 0.5s ease-in;
+    transition: background-color 0.25s ease-in; /* Updated to include background-image transition */
+    opacity: 1;
+    justify-content: center;
 }
 
+/* Button Waiting Class (when button is processing request) */
 .button-waiting {
-    background-color: lightgreen;
+    background-color: #89CFF0; /* Lighter blue */
+    background-image: none; /* Remove gradient when in waiting state */
     color: black;
 }
-
 
 /*** ALL POPUP CLASSES AND STYLES ***/
 /* AllPopup Class (inside input group, above name input) */
@@ -128,9 +132,9 @@ button {
     left: 50%; /* Center horizontally in the .right-column */
     transform: translateX(-50%); /* Adjust horizontal positioning to truly center */
     bottom: 115%; /* Adjust this value based on your layout to move it above the name field */
-
     background-color: rgb(230, 0, 0);
     color: #fff;
+    font-size: 15px;
     text-align: center;
     border-radius: 6px;
     padding: 8px;
@@ -147,13 +151,13 @@ button {
     bottom: -110%;
     background-color: rgb(230, 0, 0); /* Default to error color, will be overridden by JavaScript */
     color: #fff;
+    font-size: 15px;
     text-align: center;
     border-radius: 6px;
     padding: 8px;
     z-index: 1;
     white-space: nowrap;
 }
-
 
 /* Popop Class (inside input/message input group, within each input area: name, email, & message) */
 .popup {
@@ -165,6 +169,7 @@ button {
     margin-bottom: auto;
     background-color: rgb(230, 0, 0);
     color: #fff;
+    font-size: 15px;
     text-align: center;
     border-radius: 6px;
     padding: 8px;
@@ -172,7 +177,7 @@ button {
     white-space: nowrap;
 }
 
-/* Popup arrow */
+/* Popup (arrow) */
 .popup::after {
     content: "";
     position: absolute;
@@ -197,179 +202,282 @@ button {
 
 /* Max-Width: 1500px */
 @media (max-width: 1500px) {
-    /* ADD STYLES HERE */
+    /* Contact Header1 Font Size Change */
+    .contact-header1 {
+        font-size: 50px; /* From 55px */
+    }
+
+    /* Header Text Font Size Change */
+    .header-text {
+        font-size: 23px; /* From 25px */
+    }
 }
 
 /* Min-Width: 1024px */
 @media (min-width: 1024px) {
-    /* Button focus animation only visibile on larger screens */
-    button:active {
-        background-color: lightgreen;
+    /* Button focus/active animation only visibile on larger screens */
+    .button:focus, button:active {
+        background-color: #89CFF0;
+        background-image: none;
     }
-    button:focus {
-        outline: none;
-        box-shadow: 0 0 0 2px rgba(0, 128, 0, 0.5);
+    button:active {
+        background-color: #89CFF0;
+        background-image: none;
     }
 }
 
 /* Max-Width: 1024px */
 @media (max-width: 1024px) {
-    .header-section{
-        font-size: 14px;
+    /* Contact Header1 Font Size Change */
+    .contact-header1 {
+        font-size: 42px; /* From 50px */
     }
 
-    .header {
-        font-size: 50px;
+    /* Header Text Font Size Change */
+    .header-text {
+        font-size: 19px; /* From 23px */
     }
 
-    .label {
-        font-size: 20px;
-    }
-
+    /* Input & TextArea Font Size Change */
     input, textarea {
-        font-size: 15px;
+        font-size: 15px; /* From 20px */
     }
 
+    /* Input Min-Height Change */
     input {
-        min-height: 40px;
+        min-height: 40px; /* From 50px */
     }
 
-    .confirmationPopup {
-        font-size: 12px;
-        border-radius: 5px;
-        padding: 7px;
+    /* TextArea Min & Max Height Change */
+    textarea {
+        min-height: 60px; /* From 75px */
+        max-height: 235px; /* From 300px */
     }
 
+    /* AllPopup Font Size, Border-Radius, & Padding Change */
     .allPopup {
-        font-size: 12px;
-        border-radius: 5px;
-        padding: 7px;
+        font-size: 12px; /* From 15px */
+        border-radius: 5px; /* From 6px */
+        padding: 7px; /* From 8px */
     }
 
+    /* ConfirmationPopup Font Size, Border-Radius, & Padding Change */
+    .confirmationPopup {
+        font-size: 12px; /* From 15px */
+        border-radius: 5px; /* From 6px */
+        padding: 7px; /* From 8px */
+    }
+
+    /* Popup Position, Font Size, Border-Radius, & Padding Change */
     .popup {
-        left: 65%;
-        font-size: 12px;
-        border-radius: 5px;
-        padding: 7px;
+        left: 65%; /* From 75% */
+        font-size: 12px; /* From 15px */
+        border-radius: 5px; /* From 6px */
+        padding: 7px; /* From 8px */
 
     }
     
+    /* Popup (arrow) Top-Margin & Border-Width Change */
     .popup::after {
-        margin-top: -4px;
-        border-width: 6px;
+        margin-top: -4px; /* From -5px */
+        border-width: 6px; /* From 7px */
     }
 
+    /* Button Resizing & Font Size Change */
     button {
-        padding: 8px 16px;
-        font-size: 14px;
-        margin-top: 2%;
+        padding: 8px 16px; /* From 10px 20px */
+        font-size: 14px; /* From 16px */
     }
 }
 
-/* Tablet and smaller devices (<=768px) */
+/* Max-Width: 768px */
 @media (max-width: 768px) {
-    .header-section{
-        font-size: 12px;
+    /* Container Contact Padding Addition */
+    .container-contact {
+        padding: 2.5% 0 2.5% 0;
     }
 
-    .header {
-        font-size: 37px;
+    /* Header Section Bottom-Padding Change */
+    .header-section {
+        padding-bottom: 6%; /* From 4.5% */
     }
 
-    .label {
-        font-size: 17px;
+    /* Contact Header1 Font Size Change */
+    .contact-header1 {
+        font-size: 32px; /* From 42px */
     }
 
+    /* Header Text Font Size Change */
+    .header-text {
+        font-size: 15px; /* From 19px */
+    }
+
+    /* Input & TextArea Font Size Change */
     input, textarea {
-        font-size: 12px;
+        font-size: 12px; /* From 15px */
     }
 
+    /* Input Min-Height Change */
     input {
-        min-height: 30px;
+        min-height: 30px; /* From 40px */
     }
 
-    .confirmationPopup {
-        font-size: 10px;
-        border-radius: 5px;
-        padding: 6px;
+    /* TextArea Min & Max Height Change */
+    textarea {
+        min-height: 50px; /* From 60px */
+        max-height: 190px; /* From 235px */
     }
 
+    /* AllPopup Font Size & Padding Change */
     .allPopup {
-        font-size: 10px;
-        border-radius: 5px;
-        padding: 6px;
+        font-size: 10px; /* From 12px */
+        padding: 6px; /* From 7px */
     }
 
-    .popup {
-        left: 60%;
-        font-size: 10px;
-        border-radius: 5px;
-        padding: 6px;
+    /* ConfirmationPopup Font Size & Padding Change */
+    .confirmationPopup {
+        font-size: 10px; /* From 12px */
+        padding: 6px; /* From 7px */
+    }
 
+    /* Popup Position, Font Size, Border-Radius, & Padding Change */
+    .popup {
+        left: 60%; /* From 65% */
+        font-size: 10px; /* From 12px */
+        padding: 6px; /* From 7px */
     }
     
+    /* Popup (arrow) Border-Width Change */
     .popup::after {
-        margin-top: -4px;
-        border-width: 5px;
+        border-width: 5px; /* From 6px */
     }
 
+    /* Button Resizing & Font Size Change */
     button {
-        padding: 6px 12px;
-        font-size: 12px;
-        margin-top: 1.5%;
+        padding: 6px 12px; /* From 8px 16px */
+        font-size: 12px; /* From 14px */
     }
 }
   
-/* Smartphone and smaller devices (<=480px) */
+/* Max-Width: 480px */
 @media (max-width: 480px) {
-    .header-section{
-        font-size: 10px;
+    /* Container Contact Flex-Direction Change */
+    .container-contact {
+        flex-direction: column; /* From row */
     }
 
-    .header {
-        font-size: 25px;
+    /* Left Column Position Change */
+    .left-column {
+        justify-content: center; /* From left */
+        padding-bottom: 1.5%;
     }
 
-    .label {
-        font-size: 14px;
+    /* Img Contact Width Change */
+    .img-contact {
+        width: 90%;
     }
 
+    /* Right Column Bottom-Padding Addition */
+    .right-column {
+        padding-bottom: 6.25%;
+    }
+
+    /* Header Section Bottom-Padding Change */
+    .header-section {
+        padding-bottom: 4%; /* From 6% */
+    }
+
+    /* Contact Header1 Font Size Change */
+    .contact-header1 {
+        font-size: 28px; /* From 32px */
+    }
+
+    /* Header Text Font Size Change */
+    .header-text {
+        font-size: 14px; /* From 15px */
+    }
+
+    /* Input & TextArea Font Size Change */
     input, textarea {
-        font-size: 10px;
+        font-size: 11px; /* From 12px */
     }
 
+    /* Input Min-Height Change */
     input {
-        min-height: 20px;
+        min-height: 25px; /* From 30px */
     }
 
-    .confirmationPopup {
-        font-size: 8px;
-        border-radius: 5px;
-        padding: 5px;
+    /* TextArea Min & Max Height Change */
+    textarea {
+        min-height: 45px; /* From 50px */
+        max-height: 175px; /* From 190px */
     }
 
+    /* AllPopup Font Size & Padding Change */
     .allPopup {
-        font-size: 8px;
-        border-radius: 5px;
-        padding: 5px;
+        font-size: 9px; /* From 10px */
+        padding: 5px; /* From 6px */
     }
 
-    .popup {
-        left: 55%;
-        font-size: 8px;
-        border-radius: 5px;
-        padding: 5px;
+    /* ConfirmationPopup Font Size & Padding Change */
+    .confirmationPopup {
+        font-size: 9px; /* From 10px */
+        padding: 5px; /* From 6px */
+    }
 
+    /* Popup Position, Font Size, Border-Radius, & Padding Change */
+    .popup {
+        left: 55%; /* From 60% */
+        font-size: 9px; /* From 10px */
+        padding: 5px; /* From 6px */
     }
     
+    /* Popup (arrow) Border-Width Change */
     .popup::after {
-        margin-top: -4px;
-        border-width: 4px;
+        border-width: 4px; /* From 5px */
     }
 
+    /* Button Resizing & Font Size Change */
     button {
-        padding: 5px 10px;
-        font-size: 10px;
-        margin-top: 1%;
+        padding: 5px 10px; /* From 6px 12px */
+        font-size: 10px; /* From 12px */
+    }
+}
+
+/* Max-Width: 300px */
+@media (max-width: 300px) {
+    /* Right Column Bottom-Padding Addition */
+    .right-column {
+        padding-bottom: 8%; /* From 6.25% */
+    }
+
+    /* Header Section Bottom-Padding Change */
+    .header-section {
+        padding-bottom: 5%; /* From 4% */
+    }
+
+    /* Contact Header1 Font Size Change */
+    .contact-header1 {
+        font-size: 24px; /* From 28px */
+    }
+
+    /* Header Text Font Size Change */
+    .header-text {
+        font-size: 12px; /* From 14px */
+    }
+
+    /* AllPopup Font Size Change */
+    .allPopup {
+        font-size: 8px; /* From 9px */
+    }
+
+    /* ConfirmationPopup Font Size Change */
+    .confirmationPopup {
+        font-size: 8px; /* From 9px */
+    }
+
+    /* Popup Font Size Change */
+    .popup {
+        font-size: 8px; /* From 9px */
     }
 }
