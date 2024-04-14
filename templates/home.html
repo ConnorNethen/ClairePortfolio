@@ -37,9 +37,9 @@
         <div class="nav-group">
             <!-- Navbar links -->
             <ul class="nav-items" id="nav-items">
-                <li class="nav-item"><a class="nav-link" href="#About-Me">About Me</a></li>
                 <li class="nav-item"><a class="nav-link" href="#Artwork">Artwork</a></li>
                 <li class="nav-item"><a class="nav-link" href="#Animations">Animations</a></li>
+                <li class="nav-item"><a class="nav-link" href="#About-Me">About Me</a></li>
                 <li class="nav-item"><a class="nav-link" href="#Contact">Contact</a></li>
             </ul>
             <!-- Navbar Toggler -->
@@ -71,47 +71,6 @@
         <!-- Carousel Buttons -->
         <a class="prev" id="prevSlide"><img src="{{ url_for('static', filename='assets/Icons/arrow_left.png')}}"></a>
         <a class="next" id="nextSlide"><img src="{{ url_for('static', filename='assets/Icons/arrow_right.png')}}"></a>
-    </div>
-
-    <!-- Profile Section -->
-    <div id="About-Me" class="profile">
-        <div class="container-profile">
-            <div class="profile-content">
-                <div class="about-portrait-container">
-                    <!-- ABOUT ME HEADER AND PARAGRAPH -->
-                    <div class="about-me">
-                        <h1 class="about-header1">About Me</h1>
-                        <p class="about-description">
-                            Claire Hanel is a native of Milwaukee Wisconsin. She grew up drawing since kindergarten, thus kickstarting her love
-                            of art all the way through college. All her life she has loved movies and tv-shows, wanting to know how they were
-                            created, the behind-the-scenes. This led her to get a BA in animation at UW-Milwaukee. She is a 2D illustrator and
-                            animator. Her current project is illustrating a book with a coworker.
-                        </p>
-                    </div>
-                    <!-- PORTRAIT OF CLAIRE -->
-                    <div class="portrait-container">
-                        <img src="{{ url_for('static', filename='assets/images/ClairePortrait.png')}}" alt="Portrait of Claire" class="portrait-image">
-                    </div>
-                </div>
-                <!-- ARTIST STATEMENT HEADER AND PARAGRAPH -->
-                <div class="artist-statement">
-                    <h2 class="artist-statement-header2">Artist Statement</h2>
-                    <p class="artist-statement-description">
-                        My art is an invitation to a whimsical universe, a fantastical gallery of illustrations and animations that defy the
-                        mundane and embrace the extraordinary and quirky. Each piece is a portal to a world where the weird is wonderful. My
-                        creations range from otherworldly landscapes to fluid animations, each a celebration of the peculiar and the sublime.
-                        <br><br>
-                        I like working with different media, preferably watercolor, gouache, ink pens, acrylic, and digital programs. With
-                        these different mediums, I am able to be meticulous yet fluid, which allows for free-spirited creations. It's a bit
-                        like a planned adventure where the path might shift but the destination is always somewhere fantastic. 
-                        <br><br>
-                        I create, animate, and try to connect with those who find joy in the escape of reality. I want my art to be fun and
-                        relatable. In sharing my vision, I hope to inspire others to embrace their own creativity, to explore their imagination,
-                        and to celebrate the oddities that make our perspectives uniquely beautiful. 
-                    </p>
-                </div>
-            </div>
-        </div>
     </div>
 
     <!-- Artwork Section -->
@@ -283,6 +242,47 @@
         </div>
     </div>
 
+    <!-- Profile Section -->
+    <div id="About-Me" class="profile">
+        <div class="container-profile">
+            <div class="profile-content">
+                <div class="about-portrait-container">
+                    <!-- ABOUT ME HEADER AND PARAGRAPH -->
+                    <div class="about-me">
+                        <h1 class="about-header1">About Me</h1>
+                        <p class="about-description">
+                            Claire Hanel is a native of Milwaukee Wisconsin. She grew up drawing since kindergarten, thus kickstarting her love
+                            of art all the way through college. All her life she has loved movies and tv-shows, wanting to know how they were
+                            created, the behind-the-scenes. This led her to get a BA in animation at UW-Milwaukee. She is a 2D illustrator and
+                            animator. Her current project is illustrating a book with a coworker.
+                        </p>
+                    </div>
+                    <!-- PORTRAIT OF CLAIRE -->
+                    <div class="portrait-container">
+                        <img src="{{ url_for('static', filename='assets/images/ClairePortrait.png')}}" alt="Portrait of Claire" class="portrait-image">
+                    </div>
+                </div>
+                <!-- ARTIST STATEMENT HEADER AND PARAGRAPH -->
+                <div class="artist-statement">
+                    <h2 class="artist-statement-header2">Artist Statement</h2>
+                    <p class="artist-statement-description">
+                        My art is an invitation to a whimsical universe, a fantastical gallery of illustrations and animations that defy the
+                        mundane and embrace the extraordinary and quirky. Each piece is a portal to a world where the weird is wonderful. My
+                        creations range from otherworldly landscapes to fluid animations, each a celebration of the peculiar and the sublime.
+                        <br><br>
+                        I like working with different media, preferably watercolor, gouache, ink pens, acrylic, and digital programs. With
+                        these different mediums, I am able to be meticulous yet fluid, which allows for free-spirited creations. It's a bit
+                        like a planned adventure where the path might shift but the destination is always somewhere fantastic. 
+                        <br><br>
+                        I create, animate, and try to connect with those who find joy in the escape of reality. I want my art to be fun and
+                        relatable. In sharing my vision, I hope to inspire others to embrace their own creativity, to explore their imagination,
+                        and to celebrate the oddities that make our perspectives uniquely beautiful. 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Contact Section -->
     <div id="Contact" class="container-contact">
         <div class="left-column">
@@ -314,8 +314,6 @@
             </form>
         </div>
     </div>
-    
-
     
     <script src="{{ url_for('static', filename='/javascript/navigationbar.js') }}"></script>
     <script src="{{ url_for('static', filename='/javascript/carousel.js') }}"></script>
