@@ -10,10 +10,12 @@
     padding-top: 4.5%;
     padding-bottom: 5%;
     background-color: #A7C7E7;
+    /* REMOVED (attempt to fix problem on firefox)
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    */
 }
 
 /* Artwork-Header1 Class (inside container-artwork) */
@@ -26,11 +28,14 @@
 /* Artwork-Images Class (contains artwork-img-container) */
 .artwork-images {
     width: auto; /* Adjusted to manage the overall width of the image section */
-    max-width: 70%;
-    column-width: 300px;
-    column-gap: 1em;
-    display: block; /* Change to block display for column-width to work */
+    max-width: 75%;
+    column-width: 370px;
     padding-top: 1.5%;
+    margin: auto;
+    /* REMOVED (attempt to fix problem on firefox)
+    column-gap: 1em;
+    display: block;
+    */
 }
 
 /* Artwork-Img-Container Class (contains artwork-image) */
@@ -195,8 +200,8 @@
 
     /* Artwork Images Column-Width Change */
     .artwork-images {
-        max-width: 80%; /* From 70% */
-        column-width: 260px; /* From 300px */
+        max-width: 80%; /* From 75% */
+        column-width: 260px; /* From 370px */
     }
 
     /* PrevSlide Button Margin-Left Change */
