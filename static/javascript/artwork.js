@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // Ensure the fade-in animation completes
             setTimeout(() => {
                 endTransition();
-            }, 25); // A minimal timeout to ensure class changes are registered
+            }, 500); // Ensure class changes are registered
     
         }, 500); // 0.5s animation time
     }

@@ -10,12 +10,6 @@
     padding-top: 4.5%;
     padding-bottom: 5%;
     background-color: #A7C7E7;
-    /* REMOVED (attempt to fix problem on firefox)
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    */
 }
 
 /* Artwork-Header1 Class (inside container-artwork) */
@@ -32,10 +26,6 @@
     column-width: 372px;
     padding-top: 1.5%;
     margin: auto;
-    /* REMOVED (attempt to fix problem on firefox)
-    column-gap: 1em;
-    display: block;
-    */
 }
 
 /* Artwork-Img-Container Class (contains artwork-image) */
