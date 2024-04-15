@@ -47,12 +47,12 @@ document.addEventListener('DOMContentLoaded', function () {
             // Reset modal classes & update modal contents
             resetModal();
             updateModal(images[index]);
-    
-            // Animate next image in
-            animateIn();
-    
+
             // Force a reflow ensuring transitions are applied correctly
             void modalImg.offsetHeight;
+
+            // Animate next image in
+            animateIn();
     
             // Ensure the fade-in animation completes
             setTimeout(() => {
