@@ -29,7 +29,7 @@
 .artwork-images {
     width: auto; /* Adjusted to manage the overall width of the image section */
     max-width: 75%;
-    column-width: 370px;
+    column-width: 372px;
     padding-top: 1.5%;
     margin: auto;
     /* REMOVED (attempt to fix problem on firefox)
@@ -201,7 +201,7 @@
     /* Artwork Images Column-Width Change */
     .artwork-images {
         max-width: 80%; /* From 75% */
-        column-width: 260px; /* From 370px */
+        column-width: 260px; /* From 372px */
     }
 
     /* PrevSlide Button Margin-Left Change */
